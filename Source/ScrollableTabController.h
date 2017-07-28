@@ -2,7 +2,7 @@
 //  ScrollableTabController.h
 //  ScrollableTabController
 //
-//  Created by mitsuyoshi.yamazaki on 2017/07/28.
+//  Created by Mitsuyoshi Yamazaki on 2017/07/28.
 //  Copyright © 2017年 Mitsuyoshi Yamazaki and Speee, Inc. All rights reserved.
 //
 

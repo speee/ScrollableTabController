@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		ED747D081F2B35B000E228D2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED747D061F2B35B000E228D2 /* Info.plist */; };
 		ED747D091F2B35B000E228D2 /* ScrollableTabController.h in Headers */ = {isa = PBXBuildFile; fileRef = ED747D071F2B35B000E228D2 /* ScrollableTabController.h */; };
+		ED747D0B1F2B361700E228D2 /* ScrollableTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED747D0A1F2B361700E228D2 /* ScrollableTabController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ED747CFA1F2B356800E228D2 /* ScrollableTabController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScrollableTabController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED747D061F2B35B000E228D2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED747D071F2B35B000E228D2 /* ScrollableTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollableTabController.h; sourceTree = "<group>"; };
+		ED747D0A1F2B361700E228D2 /* ScrollableTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableTabController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			children = (
 				ED747D061F2B35B000E228D2 /* Info.plist */,
 				ED747D071F2B35B000E228D2 /* ScrollableTabController.h */,
+				ED747D0A1F2B361700E228D2 /* ScrollableTabController.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -96,6 +99,7 @@
 				TargetAttributes = {
 					ED747CF91F2B356800E228D2 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -133,6 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED747D0B1F2B361700E228D2 /* ScrollableTabController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +248,7 @@
 		ED747D031F2B356800E228D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -255,6 +261,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.speee.ScrollableTabController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -262,6 +269,7 @@
 		ED747D041F2B356800E228D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
