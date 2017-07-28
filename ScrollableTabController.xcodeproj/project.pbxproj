@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ED747CFF1F2B356800E228D2 /* ScrollableTabController.h in Headers */ = {isa = PBXBuildFile; fileRef = ED747CFD1F2B356800E228D2 /* ScrollableTabController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED747D081F2B35B000E228D2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED747D061F2B35B000E228D2 /* Info.plist */; };
+		ED747D091F2B35B000E228D2 /* ScrollableTabController.h in Headers */ = {isa = PBXBuildFile; fileRef = ED747D071F2B35B000E228D2 /* ScrollableTabController.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ED747CFA1F2B356800E228D2 /* ScrollableTabController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScrollableTabController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED747CFD1F2B356800E228D2 /* ScrollableTabController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollableTabController.h; sourceTree = "<group>"; };
-		ED747CFE1F2B356800E228D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED747D061F2B35B000E228D2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED747D071F2B35B000E228D2 /* ScrollableTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollableTabController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,7 +31,7 @@
 		ED747CF01F2B356700E228D2 = {
 			isa = PBXGroup;
 			children = (
-				ED747CFC1F2B356800E228D2 /* ScrollableTabController */,
+				ED747D051F2B35B000E228D2 /* Source */,
 				ED747CFB1F2B356800E228D2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,13 +44,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		ED747CFC1F2B356800E228D2 /* ScrollableTabController */ = {
+		ED747D051F2B35B000E228D2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				ED747CFD1F2B356800E228D2 /* ScrollableTabController.h */,
-				ED747CFE1F2B356800E228D2 /* Info.plist */,
+				ED747D061F2B35B000E228D2 /* Info.plist */,
+				ED747D071F2B35B000E228D2 /* ScrollableTabController.h */,
 			);
-			path = ScrollableTabController;
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,7 +60,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED747CFF1F2B356800E228D2 /* ScrollableTabController.h in Headers */,
+				ED747D091F2B35B000E228D2 /* ScrollableTabController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +122,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED747D081F2B35B000E228D2 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +248,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ScrollableTabController/Info.plist;
+				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.speee.ScrollableTabController;
@@ -264,7 +266,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ScrollableTabController/Info.plist;
+				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.speee.ScrollableTabController;
@@ -293,6 +295,7 @@
 				ED747D041F2B356800E228D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
