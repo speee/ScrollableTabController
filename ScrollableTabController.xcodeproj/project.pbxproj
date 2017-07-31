@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ED747D081F2B35B000E228D2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED747D061F2B35B000E228D2 /* Info.plist */; };
-		ED747D091F2B35B000E228D2 /* ScrollableTabController.h in Headers */ = {isa = PBXBuildFile; fileRef = ED747D071F2B35B000E228D2 /* ScrollableTabController.h */; };
+		ED747D091F2B35B000E228D2 /* ScrollableTabController.h in Headers */ = {isa = PBXBuildFile; fileRef = ED747D071F2B35B000E228D2 /* ScrollableTabController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED747D0B1F2B361700E228D2 /* ScrollableTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED747D0A1F2B361700E228D2 /* ScrollableTabController.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +77,7 @@
 				ED747CF61F2B356800E228D2 /* Frameworks */,
 				ED747CF71F2B356800E228D2 /* Headers */,
 				ED747CF81F2B356800E228D2 /* Resources */,
+				ED747D0C1F2B36D500E228D2 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -126,11 +126,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED747D081F2B35B000E228D2 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ED747D0C1F2B36D500E228D2 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ED747CF51F2B356800E228D2 /* Sources */ = {
