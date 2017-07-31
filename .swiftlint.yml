@@ -1,0 +1,18 @@
+included:
+  - ScrollableTabController
+  - ScrollableTabControllerDemo
+disabled_rules:
+opt_in_rules:
+  - empty_count
+  - force_unwrapping
+  - conditional_returns_on_newline
+  - no_extension_access_modifier
+  - operator_usage_whitespace
+  - overridden_super_call
+  - private_outlet
+  - prohibited_super_call
+  - sorted_imports
+  - switch_case_on_newline
+  - trailing_closure
+  - unneeded_parentheses_in_closure_argument
+  - vertical_parameter_alignment_on_call
