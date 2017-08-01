@@ -175,7 +175,13 @@ public final class ScrollableTabController: UIViewController {
     }
   }
 
-  private var scrollInsetTop: CGFloat?
+  private var upperContentViewHeight: CGFloat {
+    return upperContentView.frame.height
+  }
+  private var scrollInsetTop: CGFloat {
+    return upperContentViewHeight + tabViewHeight
+  }
+  private var isUpperViewSizeFixed = false
   private var shouldIgnoreOffsetChange = false
 
   // MARK: - Lifecycle
@@ -229,7 +235,8 @@ public final class ScrollableTabController: UIViewController {
     currentViewController.view.setNeedsLayout()
 
     if let scrollable = currentViewController as? Scrollable {
-      let scrollInset = UIEdgeInsets.init(top: scrollInsetTop ?? 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+      let scrollInsetTop = isUpperViewSizeFixed ? self.scrollInsetTop : 0.0
+      let scrollInset = UIEdgeInsets.init(top: scrollInsetTop, left: 0.0, bottom: 0.0, right: 0.0)
       scrollable.scrollView.contentInset = scrollInset
       scrollable.scrollView.scrollIndicatorInsets = scrollInset
 
@@ -328,7 +335,7 @@ public final class ScrollableTabController: UIViewController {
     }
 
     let scrollInsetTop = height + tabViewHeight
-    self.scrollInsetTop = scrollInsetTop
+    isUpperViewSizeFixed = true
 
     guard scrollInsetTop != scrollable.scrollView.contentInset.top else {
       return
@@ -344,7 +351,7 @@ public final class ScrollableTabController: UIViewController {
 
     let offset = -(tabViewHeight + offsetY)
     let maxValue = CGFloat(0.0)
-    let minValue = scrollInsetTop ?? CGFloat.leastNormalMagnitude
+    let minValue = upperContentViewHeight
 
     let constant = min(max(offset, maxValue), minValue)
 
