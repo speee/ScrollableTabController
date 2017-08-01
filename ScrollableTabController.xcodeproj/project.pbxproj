@@ -98,11 +98,11 @@
 		ED747D051F2B35B000E228D2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				ED747D071F2B35B000E228D2 /* ScrollableTabController.h */,
+				ED747D061F2B35B000E228D2 /* Info.plist */,
 				ED747D0A1F2B361700E228D2 /* ScrollableTabController.swift */,
 				ED7846D61F302A0E00511AB2 /* ScrollableTabController.xib */,
 				ED7846D81F302BB800511AB2 /* TouchTransparentView.swift */,
-				ED747D071F2B35B000E228D2 /* ScrollableTabController.h */,
-				ED747D061F2B35B000E228D2 /* Info.plist */,
 			);
 			path = Source;
 			sourceTree = "<group>";

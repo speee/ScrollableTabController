@@ -68,11 +68,11 @@
                 <constraint firstAttribute="bottom" secondItem="DwG-43-7sk" secondAttribute="bottom" id="DHJ-8R-AtE"/>
                 <constraint firstAttribute="trailing" secondItem="XgL-wa-MXe" secondAttribute="trailing" id="Ucr-qq-VJG"/>
                 <constraint firstItem="XgL-wa-MXe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="100" id="VHt-h1-wIf"/>
+                <constraint firstItem="DwG-43-7sk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Vcs-uo-rq5"/>
                 <constraint firstItem="XgL-wa-MXe" firstAttribute="top" secondItem="3UM-PZ-OGQ" secondAttribute="bottom" id="eHm-tr-TPa"/>
                 <constraint firstItem="DwG-43-7sk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sgR-CD-iOf"/>
                 <constraint firstItem="3UM-PZ-OGQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wtt-bh-HE6"/>
                 <constraint firstItem="XgL-wa-MXe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3UM-PZ-OGQ" secondAttribute="bottom" id="y7x-xN-elp"/>
-                <constraint firstItem="DwG-43-7sk" firstAttribute="top" secondItem="3UM-PZ-OGQ" secondAttribute="bottom" id="yzj-lR-Tmp"/>
                 <constraint firstAttribute="trailing" secondItem="DwG-43-7sk" secondAttribute="trailing" id="zyk-qH-z6A"/>
             </constraints>
         </view>

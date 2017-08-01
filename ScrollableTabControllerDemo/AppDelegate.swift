@@ -25,8 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let demoTableViewController1 = storyboard.instantiateViewController(withIdentifier: "DemoTableViewController") as! UITableViewController
     let demoTableViewController2 = storyboard.instantiateViewController(withIdentifier: "DemoTableViewController") as! UITableViewController
 
+    let upperContentViewController = storyboard.instantiateViewController(withIdentifier: "UpperContentViewController")
+    
     scrollableTabController.viewControllers = [ demoTableViewController1, demoTableViewController2 ]
-
+    scrollableTabController.upperContentViewController = upperContentViewController
+    
     window!.rootViewController = scrollableTabController
     window!.makeKeyAndVisible()
 
@@ -52,5 +55,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension UITableViewController: Scrollable {
   public var scrollView: UIScrollView! {
     return tableView
+  }
+}
+
+class ExpandedTableView: UITableView {
+  override var contentSize: CGSize {
+    set {
+      let size = CGSize.init(width: newValue.width, height: max(newValue.height, minimumContentHeight))
+      super.contentSize = size
+    }
+    get {
+      return super.contentSize
+    }
+  }
+  
+  var minimumContentHeight: CGFloat {
+    return frame.height
   }
 }

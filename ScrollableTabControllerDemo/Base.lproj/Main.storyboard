@@ -13,7 +13,7 @@
         <scene sceneID="yaw-8G-ira">
             <objects>
                 <tableViewController storyboardIdentifier="DemoTableViewController" id="VYB-B9-KkV" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Eos-Tw-S9b">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Eos-Tw-S9b" customClass="ExpandedTableView" customModule="ScrollableTabControllerDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -244,6 +244,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq4-S5-ak4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="179" y="171"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="oJP-pu-pmD">
+            <objects>
+                <viewController storyboardIdentifier="UpperContentViewController" id="ZzW-fN-vr1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="asA-Pe-LIf"/>
+                        <viewControllerLayoutGuide type="bottom" id="Abw-Ki-QLt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ISP-h2-KeP" customClass="TouchTransparentView" customModule="ScrollableTabController">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOGE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xma-fV-DOJ">
+                                <rect key="frame" x="163" y="90" width="48.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.2411553136" blue="0.24570151730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Xma-fV-DOJ" firstAttribute="centerX" secondItem="ISP-h2-KeP" secondAttribute="centerX" id="I0o-0v-8ew"/>
+                            <constraint firstItem="Xma-fV-DOJ" firstAttribute="centerY" secondItem="ISP-h2-KeP" secondAttribute="centerY" id="kWL-O9-u26"/>
+                            <constraint firstItem="Xma-fV-DOJ" firstAttribute="top" secondItem="asA-Pe-LIf" secondAttribute="bottom" constant="90" id="tzm-Zt-VQy"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="200"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JgZ-IY-9oM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1012" y="-40"/>
         </scene>
     </scenes>
 </document>
