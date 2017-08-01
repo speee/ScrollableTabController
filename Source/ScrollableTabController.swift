@@ -8,14 +8,25 @@
 
 import UIKit
 
-protocol Scrollable {
+public protocol Scrollable {
   var scrollView: UIScrollView! { get }
 }
 
-final class ScrollableTabController: UIViewController {
+public final class ScrollableTabController: UIViewController {
 
   // MARK: - Public API
-  var viewControllers: [UIViewController] = [] {
+  public init() {
+    let klass = type(of: self)
+    let nibName = String.init(describing: klass)
+    let bundle = Bundle.init(for: klass)
+    super.init(nibName: nibName, bundle: bundle)
+  }
+
+  required public init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+
+  public var viewControllers: [UIViewController] = [] {
     willSet {
       for controller in viewControllers {
         if controller.isViewLoaded {
@@ -47,14 +58,14 @@ final class ScrollableTabController: UIViewController {
     }
   }
 
-  var selectedViewController: UIViewController? {
+  public var selectedViewController: UIViewController? {
     guard viewControllers.isNotEmpty else {
       return nil
     }
     return viewControllers[selectedIndex]
   }
 
-  var selectedIndex = 0 {
+  public var selectedIndex = 0 {
     willSet {
       guard selectedViewController != nil else {
         return
@@ -83,7 +94,7 @@ final class ScrollableTabController: UIViewController {
     }
   }
 
-  var upperContentViewController: UIViewController? {
+  public var upperContentViewController: UIViewController? {
     willSet {
       stopUpperContentObservable()
       guard newValue != upperContentViewController else {
@@ -116,8 +127,12 @@ final class ScrollableTabController: UIViewController {
     }
   }
 
-  func set<T> (scrollableControllers: [T]) where T: UIViewController, T: Scrollable {
+  public func set<T: UIViewController> (scrollableControllers: [T]) where T: Scrollable {
     viewControllers = scrollableControllers
+  }
+
+  public var tabViewHeight: CGFloat {
+    return isTabViewHidden ? 0.0 : tabView.frame.size.height
   }
 
   // MARK: - Private Accessor
@@ -160,15 +175,11 @@ final class ScrollableTabController: UIViewController {
     }
   }
 
-  var tabViewHeight: CGFloat {
-    return isTabViewHidden ? 0.0 : tabView.frame.size.height
-  }
-
   private var scrollInsetTop: CGFloat?
   private var shouldIgnoreOffsetChange = false
 
   // MARK: - Lifecycle
-  override func viewDidLoad() {
+  override public func viewDidLoad() {
     super.viewDidLoad()
 
     automaticallyAdjustsScrollViewInsets = false
@@ -287,10 +298,10 @@ final class ScrollableTabController: UIViewController {
     selectedViewController.scrollView.removeObserver(self, forKeyPath: "contentOffset")
   }
 
-  override func observeValue(forKeyPath keyPath: String?,
-                             of object: Any?,
-                             change: [NSKeyValueChangeKey : Any]?,
-                             context: UnsafeMutableRawPointer?) {
+  override public func observeValue(forKeyPath keyPath: String?,
+                                    of object: Any?,
+                                    change: [NSKeyValueChangeKey : Any]?,
+                                    context: UnsafeMutableRawPointer?) {
     switch keyPath {
     case .some("bounds"), .some("frame"):
       guard let frame = change?[.newKey] as? CGRect else {

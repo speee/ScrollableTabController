@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ScrollableTabController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+    window = UIWindow(frame: UIScreen.main.bounds)
+    
+    let scrollableTabController = ScrollableTabController()
+
+    let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+    let demoTableViewController1 = storyboard.instantiateViewController(withIdentifier: "DemoTableViewController") as! UITableViewController
+    let demoTableViewController2 = storyboard.instantiateViewController(withIdentifier: "DemoTableViewController") as! UITableViewController
+
+    scrollableTabController.viewControllers = [ demoTableViewController1, demoTableViewController2 ]
+
+    window!.rootViewController = scrollableTabController
+    window!.makeKeyAndVisible()
+
     return true
   }
 
@@ -31,5 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func applicationWillTerminate(_ application: UIApplication) {
+  }
+}
+
+extension UITableViewController: Scrollable {
+  public var scrollView: UIScrollView! {
+    return tableView
   }
 }

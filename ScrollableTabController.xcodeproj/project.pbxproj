@@ -9,21 +9,49 @@
 /* Begin PBXBuildFile section */
 		ED747D091F2B35B000E228D2 /* ScrollableTabController.h in Headers */ = {isa = PBXBuildFile; fileRef = ED747D071F2B35B000E228D2 /* ScrollableTabController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED747D0B1F2B361700E228D2 /* ScrollableTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED747D0A1F2B361700E228D2 /* ScrollableTabController.swift */; };
+		ED7846D71F302A0E00511AB2 /* ScrollableTabController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED7846D61F302A0E00511AB2 /* ScrollableTabController.xib */; };
+		ED7846D91F302BB800511AB2 /* TouchTransparentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7846D81F302BB800511AB2 /* TouchTransparentView.swift */; };
 		EDEA2CBD1F2F18BB00B35F4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEA2CBC1F2F18BB00B35F4A /* AppDelegate.swift */; };
-		EDEA2CBF1F2F18BB00B35F4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEA2CBE1F2F18BB00B35F4A /* ViewController.swift */; };
 		EDEA2CC21F2F18BB00B35F4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDEA2CC01F2F18BB00B35F4A /* Main.storyboard */; };
 		EDEA2CC41F2F18BB00B35F4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDEA2CC31F2F18BB00B35F4A /* Assets.xcassets */; };
 		EDEA2CC71F2F18BB00B35F4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDEA2CC51F2F18BB00B35F4A /* LaunchScreen.storyboard */; };
+		EDEA2CCD1F2F309900B35F4A /* ScrollableTabController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED747CFA1F2B356800E228D2 /* ScrollableTabController.framework */; };
+		EDEA2CCE1F2F309900B35F4A /* ScrollableTabController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED747CFA1F2B356800E228D2 /* ScrollableTabController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EDEA2CCF1F2F309900B35F4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED747CF11F2B356700E228D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED747CF91F2B356800E228D2;
+			remoteInfo = ScrollableTabController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EDEA2CD11F2F309900B35F4A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EDEA2CCE1F2F309900B35F4A /* ScrollableTabController.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		ED747CFA1F2B356800E228D2 /* ScrollableTabController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScrollableTabController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED747D061F2B35B000E228D2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED747D071F2B35B000E228D2 /* ScrollableTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollableTabController.h; sourceTree = "<group>"; };
 		ED747D0A1F2B361700E228D2 /* ScrollableTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableTabController.swift; sourceTree = "<group>"; };
+		ED7846D61F302A0E00511AB2 /* ScrollableTabController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollableTabController.xib; sourceTree = "<group>"; };
+		ED7846D81F302BB800511AB2 /* TouchTransparentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchTransparentView.swift; sourceTree = "<group>"; };
 		EDEA2CBA1F2F18BB00B35F4A /* ScrollableTabControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollableTabControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDEA2CBC1F2F18BB00B35F4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EDEA2CBE1F2F18BB00B35F4A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EDEA2CC11F2F18BB00B35F4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EDEA2CC31F2F18BB00B35F4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDEA2CC61F2F18BB00B35F4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDEA2CCD1F2F309900B35F4A /* ScrollableTabController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,9 +98,11 @@
 		ED747D051F2B35B000E228D2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				ED747D061F2B35B000E228D2 /* Info.plist */,
-				ED747D071F2B35B000E228D2 /* ScrollableTabController.h */,
 				ED747D0A1F2B361700E228D2 /* ScrollableTabController.swift */,
+				ED7846D61F302A0E00511AB2 /* ScrollableTabController.xib */,
+				ED7846D81F302BB800511AB2 /* TouchTransparentView.swift */,
+				ED747D071F2B35B000E228D2 /* ScrollableTabController.h */,
+				ED747D061F2B35B000E228D2 /* Info.plist */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -80,7 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				EDEA2CBC1F2F18BB00B35F4A /* AppDelegate.swift */,
-				EDEA2CBE1F2F18BB00B35F4A /* ViewController.swift */,
 				EDEA2CC01F2F18BB00B35F4A /* Main.storyboard */,
 				EDEA2CC31F2F18BB00B35F4A /* Assets.xcassets */,
 				EDEA2CC51F2F18BB00B35F4A /* LaunchScreen.storyboard */,
@@ -129,11 +159,12 @@
 				EDEA2CB61F2F18BB00B35F4A /* Sources */,
 				EDEA2CB71F2F18BB00B35F4A /* Frameworks */,
 				EDEA2CB81F2F18BB00B35F4A /* Resources */,
-				EDEA2CCC1F2F1D1600B35F4A /* ShellScript */,
+				EDEA2CD11F2F309900B35F4A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EDEA2CD01F2F309900B35F4A /* PBXTargetDependency */,
 			);
 			name = ScrollableTabControllerDemo;
 			productName = ScrollableTabControllerDemo;
@@ -185,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED7846D71F302A0E00511AB2 /* ScrollableTabController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,19 +247,6 @@
 			shellPath = /bin/sh;
 			shellScript = "EXPECTED_LINT_VERSION=\"0.20.1\"\nSWIFTLINT_PKG_URL=\"https://github.com/realm/SwiftLint/releases/download/${EXPECTED_LINT_VERSION}/SwiftLint.pkg\"\n\nif [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  EXIT_CODE=1\nelse\n  EXIT_CODE=0\nfi\n\nif which swiftlint >/dev/null; then\n  LINT_VERSION=$(swiftlint version)\n  if [ $LINT_VERSION = $EXPECTED_LINT_VERSION ]; then\n    if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n      swiftlint autocorrect\n      swiftlint\n    fi\n  else\n    echo \"error: Unexpected Swiftlint version (${LINT_VERSION}) detected(expected ${EXPECTED_LINT_VERSION}, download from ${SWIFTLINT_PKG_URL}).\"\n    exit $EXIT_CODE\n  fi\nelse\n  echo \"error: SwiftLint not installed, download from ${SWIFTLINT_PKG_URL}\"\n  exit $EXIT_CODE\nfi";
 		};
-		EDEA2CCC1F2F1D1600B35F4A /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "EXPECTED_LINT_VERSION=\"0.20.1\"\nSWIFTLINT_PKG_URL=\"https://github.com/realm/SwiftLint/releases/download/${EXPECTED_LINT_VERSION}/SwiftLint.pkg\"\n\nif [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  EXIT_CODE=1\nelse\n  EXIT_CODE=0\nfi\n\nif which swiftlint >/dev/null; then\n  LINT_VERSION=$(swiftlint version)\n  if [ $LINT_VERSION = $EXPECTED_LINT_VERSION ]; then\n    if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n      swiftlint autocorrect\n      swiftlint\n    fi\n  else\n    echo \"error: Unexpected Swiftlint version (${LINT_VERSION}) detected(expected ${EXPECTED_LINT_VERSION}, download from ${SWIFTLINT_PKG_URL}).\"\n    exit $EXIT_CODE\n  fi\nelse\n  echo \"error: SwiftLint not installed, download from ${SWIFTLINT_PKG_URL}\"\n  exit $EXIT_CODE\nfi";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -236,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED747D0B1F2B361700E228D2 /* ScrollableTabController.swift in Sources */,
+				ED7846D91F302BB800511AB2 /* TouchTransparentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,12 +263,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDEA2CBF1F2F18BB00B35F4A /* ViewController.swift in Sources */,
 				EDEA2CBD1F2F18BB00B35F4A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EDEA2CD01F2F309900B35F4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED747CF91F2B356800E228D2 /* ScrollableTabController */;
+			targetProxy = EDEA2CCF1F2F309900B35F4A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EDEA2CC01F2F18BB00B35F4A /* Main.storyboard */ = {
@@ -415,6 +442,7 @@
 		EDEA2CC91F2F18BB00B35F4A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ScrollableTabControllerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -427,6 +455,7 @@
 		EDEA2CCA1F2F18BB00B35F4A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ScrollableTabControllerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -464,6 +493,7 @@
 				EDEA2CCA1F2F18BB00B35F4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

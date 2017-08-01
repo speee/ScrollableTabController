@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScrollableTabController" customModule="ScrollableTabController" customModuleProvider="target">
+            <connections>
+                <outlet property="segmentedControl" destination="Dd7-J7-Pid" id="tly-Dd-eEw"/>
+                <outlet property="tabContentView" destination="DwG-43-7sk" id="Ynw-9c-wwf"/>
+                <outlet property="tabView" destination="XgL-wa-MXe" id="qo2-KP-IEe"/>
+                <outlet property="tabViewTopConstraint" destination="VHt-h1-wIf" id="gfy-iA-tBb"/>
+                <outlet property="upperContentView" destination="3UM-PZ-OGQ" id="A6N-Yq-0gA"/>
+                <outlet property="view" destination="iN0-l3-epB" id="ATZ-AQ-4HP"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DwG-43-7sk">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3UM-PZ-OGQ" customClass="TouchTransparentView" customModule="ScrollableTabController" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="101" id="GvS-PW-5if"/>
+                    </constraints>
+                </containerView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XgL-wa-MXe" customClass="TouchTransparentView" customModule="ScrollableTabController" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Dd7-J7-Pid">
+                            <rect key="frame" x="40" y="10" width="295" height="36"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <segments>
+                                <segment title="First"/>
+                                <segment title="Second"/>
+                            </segments>
+                            <color key="tintColor" red="0.72941176470000002" green="0.70588235290000001" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="segmentedControlDidChangeValueWithSender:" destination="-1" eventType="valueChanged" id="dFX-8W-9J9"/>
+                            </connections>
+                        </segmentedControl>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="Dd7-J7-Pid" firstAttribute="centerX" secondItem="XgL-wa-MXe" secondAttribute="centerX" id="GD0-Gl-fE6"/>
+                        <constraint firstItem="Dd7-J7-Pid" firstAttribute="top" secondItem="XgL-wa-MXe" secondAttribute="top" constant="10" id="OMS-BP-9hs"/>
+                        <constraint firstAttribute="height" constant="55" id="Ob8-uA-5k8"/>
+                        <constraint firstItem="Dd7-J7-Pid" firstAttribute="leading" secondItem="XgL-wa-MXe" secondAttribute="leading" constant="40" id="PiI-EV-Gaj"/>
+                        <constraint firstItem="Dd7-J7-Pid" firstAttribute="centerY" secondItem="XgL-wa-MXe" secondAttribute="centerY" id="tbO-4o-XCb"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="3UM-PZ-OGQ" secondAttribute="trailing" id="03w-U7-VZj"/>
+                <constraint firstItem="XgL-wa-MXe" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BdJ-yp-UVw"/>
+                <constraint firstAttribute="bottom" secondItem="DwG-43-7sk" secondAttribute="bottom" id="DHJ-8R-AtE"/>
+                <constraint firstAttribute="trailing" secondItem="XgL-wa-MXe" secondAttribute="trailing" id="Ucr-qq-VJG"/>
+                <constraint firstItem="XgL-wa-MXe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="100" id="VHt-h1-wIf"/>
+                <constraint firstItem="XgL-wa-MXe" firstAttribute="top" secondItem="3UM-PZ-OGQ" secondAttribute="bottom" id="eHm-tr-TPa"/>
+                <constraint firstItem="DwG-43-7sk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sgR-CD-iOf"/>
+                <constraint firstItem="3UM-PZ-OGQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wtt-bh-HE6"/>
+                <constraint firstItem="XgL-wa-MXe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3UM-PZ-OGQ" secondAttribute="bottom" id="y7x-xN-elp"/>
+                <constraint firstItem="DwG-43-7sk" firstAttribute="top" secondItem="3UM-PZ-OGQ" secondAttribute="bottom" id="yzj-lR-Tmp"/>
+                <constraint firstAttribute="trailing" secondItem="DwG-43-7sk" secondAttribute="trailing" id="zyk-qH-z6A"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
