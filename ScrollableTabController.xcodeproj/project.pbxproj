@@ -11,6 +11,7 @@
 		ED747D0B1F2B361700E228D2 /* ScrollableTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED747D0A1F2B361700E228D2 /* ScrollableTabController.swift */; };
 		ED7846D71F302A0E00511AB2 /* ScrollableTabController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED7846D61F302A0E00511AB2 /* ScrollableTabController.xib */; };
 		ED7846D91F302BB800511AB2 /* TouchTransparentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7846D81F302BB800511AB2 /* TouchTransparentView.swift */; };
+		ED7846DD1F3163A300511AB2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7846DC1F3163A300511AB2 /* Extensions.swift */; };
 		EDEA2CBD1F2F18BB00B35F4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEA2CBC1F2F18BB00B35F4A /* AppDelegate.swift */; };
 		EDEA2CC21F2F18BB00B35F4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDEA2CC01F2F18BB00B35F4A /* Main.storyboard */; };
 		EDEA2CC41F2F18BB00B35F4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDEA2CC31F2F18BB00B35F4A /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		ED747D0A1F2B361700E228D2 /* ScrollableTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableTabController.swift; sourceTree = "<group>"; };
 		ED7846D61F302A0E00511AB2 /* ScrollableTabController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollableTabController.xib; sourceTree = "<group>"; };
 		ED7846D81F302BB800511AB2 /* TouchTransparentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchTransparentView.swift; sourceTree = "<group>"; };
+		ED7846DC1F3163A300511AB2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EDEA2CBA1F2F18BB00B35F4A /* ScrollableTabControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollableTabControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDEA2CBC1F2F18BB00B35F4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDEA2CC11F2F18BB00B35F4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				ED747D0A1F2B361700E228D2 /* ScrollableTabController.swift */,
 				ED7846D61F302A0E00511AB2 /* ScrollableTabController.xib */,
 				ED7846D81F302BB800511AB2 /* TouchTransparentView.swift */,
+				ED7846DC1F3163A300511AB2 /* Extensions.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED747D0B1F2B361700E228D2 /* ScrollableTabController.swift in Sources */,
+				ED7846DD1F3163A300511AB2 /* Extensions.swift in Sources */,
 				ED7846D91F302BB800511AB2 /* TouchTransparentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

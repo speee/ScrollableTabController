@@ -385,23 +385,3 @@ extension UIViewController {
     return ancestor()
   }
 }
-
-extension UIViewController {
-  func ancestor<Ancestor: UIViewController>() -> Ancestor? {
-    var controller: UIViewController? = self
-
-    while controller?.parent != nil {
-      if let ancestorViewController = controller?.parent as? Ancestor {
-        return ancestorViewController
-      }
-      controller = controller?.parent
-    }
-    return nil
-  }
-}
-
-extension Array {
-  var isNotEmpty: Bool {
-    return !isEmpty
-  }
-}
