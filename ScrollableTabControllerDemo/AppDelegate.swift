@@ -30,7 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     scrollableTabController.viewControllers = [ demoTableViewController1, demoTableViewController2 ]
     scrollableTabController.upperContentViewController = upperContentViewController
     
-    window!.rootViewController = scrollableTabController
+    let navigationController = UINavigationController.init(rootViewController: scrollableTabController)
+    navigationController.navigationBar.isTranslucent = false
+    
+    window!.rootViewController = navigationController
     window!.makeKeyAndVisible()
 
     return true
