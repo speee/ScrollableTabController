@@ -17,9 +17,8 @@ public final class ScrollableTabController: UIViewController {
   // MARK: - Public API
   public init() {
     let klass = type(of: self)
-    let nibName = String.init(describing: klass)
     let bundle = Bundle.init(for: klass)
-    super.init(nibName: nibName, bundle: bundle)
+    super.init(nibName: nil, bundle: bundle)
   }
 
   required public init?(coder aDecoder: NSCoder) {
