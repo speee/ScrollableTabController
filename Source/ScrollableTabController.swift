@@ -22,7 +22,7 @@ public final class ScrollableTabController: UIViewController {
   }
 
   required public init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
+    Log.fatal("init(coder:) has not been implemented")
   }
 
   public override var title: String? {
@@ -48,10 +48,6 @@ public final class ScrollableTabController: UIViewController {
       }
     }
     didSet {
-      guard viewControllers.isNotEmpty else {
-        print("空配列を渡されることは想定していません")  // TODO: 許容するようにする
-        return
-      }
       if isViewLoaded {
         isTabViewHidden = viewControllers.count <= 1
       }
@@ -85,7 +81,7 @@ public final class ScrollableTabController: UIViewController {
     }
     didSet {
       guard selectedIndex < viewControllers.count else {
-        fatalError("index out of bounds. index: \(selectedIndex), viewControllers.count: \(viewControllers.count)")
+        Log.fatal("index out of bounds. index: \(selectedIndex), viewControllers.count: \(viewControllers.count)")
       }
       guard selectedIndex != oldValue else {
         return
@@ -323,14 +319,14 @@ public final class ScrollableTabController: UIViewController {
     switch keyPath {
     case .some("bounds"), .some("frame"):
       guard let frame = change?[.newKey] as? CGRect else {
-        print("change[.newKey]がCGRectではありません")  // TODO: DebugではfatalError、Releaseではログになるような挙動の何か作る
+        Log.error("Unexpected change[.newKey], expected: CGRect, actual: \(String(describing: change?[.newKey]))")
         return
       }
       observeUpperViewHeight(frame.height)
 
     case .some("contentOffset"):
       guard let offset = change?[.newKey] as? CGPoint else {
-        print("change[.newKey]がCGPointではありません")
+        Log.error("Unexpected change[.newKey], expected: CGPoint, actual: \(String(describing: change?[.newKey]))")
         return
       }
       observeScrollViewOffset(offset.y)
@@ -382,7 +378,7 @@ public final class ScrollableTabController: UIViewController {
     }
 
     tabViewTopConstraint.constant = constant
-    view.setNeedsLayout() // layoutIfNeeded() では更新しないことがある
+    view.setNeedsLayout() // layoutIfNeeded() may not redraw the view
   }
 
   deinit {
