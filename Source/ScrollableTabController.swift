@@ -25,6 +25,18 @@ public final class ScrollableTabController: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
 
+  public override var title: String? {
+    set {
+      super.title = newValue
+    }
+    get {
+      if let title = super.title {
+        return title
+      }
+      return upperContentViewController?.title
+    }
+  }
+
   public var viewControllers: [UIViewController] = [] {
     willSet {
       for controller in viewControllers {
