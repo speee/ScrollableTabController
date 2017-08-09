@@ -25,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let demoTableViewController1 = storyboard.instantiateViewController(withIdentifier: "DemoTableViewController") as! UITableViewController
     let demoTableViewController2 = storyboard.instantiateViewController(withIdentifier: "DemoTableViewController") as! UITableViewController
 
+    demoTableViewController1.title = "TableView 1"
+    demoTableViewController2.title = "TableView 2"
+    
     let upperContentViewController = storyboard.instantiateViewController(withIdentifier: "UpperContentViewController")
     
     scrollableTabController.viewControllers = [ demoTableViewController1, demoTableViewController2 ]
