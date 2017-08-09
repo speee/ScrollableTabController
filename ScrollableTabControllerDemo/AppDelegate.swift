@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     demoTableViewController1.title = "TableView 1"
     demoTableViewController2.title = "TableView 2"
     
+    demoTableViewController2.tableView.backgroundColor = UIColor.white
+    
     let upperContentViewController = storyboard.instantiateViewController(withIdentifier: "UpperContentViewController")
     
     scrollableTabController.viewControllers = [ demoTableViewController1, demoTableViewController2 ]
