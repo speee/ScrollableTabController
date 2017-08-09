@@ -23,15 +23,26 @@ iOS10+
 let scrollableTabController = ScrollableTabController()
 
 scrollableTabController.viewControllers = [ 
-  someScrollViewController1, 
-  someScrollViewController2
+  someScrollableViewController1, 
+  someScrollableViewController2
 ]
 scrollableTabController.upperContentViewController = someContentViewController
 ```
 
-### Restriction for ContentViewControllers
+### Restrictions for ContentViewControllers
 
-// TODO:
+There're some restrictions to avoid unwanted behavior.
+
+#### UpperContentViewController
+
+- Its view has to be able to define its height. ScrollableTabController observe the height and decide its container view's height.
+
+#### ScrollableViewController
+
+- It has to conform to Scrollable protocol to make ScrollableTabController can observe scrolling.
+- **Its scrollView.contentSize.height must not be smaller than scrollView.frame.height.** If the contentSize.height is too small, the upper content area can't shrink. See the screenshot below.
+
+<img width=320 src="https://user-images.githubusercontent.com/904354/29102399-c738c9be-7cf3-11e7-9880-98605319dc7e.gif">
 
 ## Installation
 
