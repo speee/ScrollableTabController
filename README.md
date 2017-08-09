@@ -2,6 +2,7 @@ ScrollableTabController
 ====
 
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 
 ScrollableTabController is tab based ContainerViewController with shrinkable upper content area.
