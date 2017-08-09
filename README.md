@@ -4,7 +4,7 @@ ScrollableTabController
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 
-ScrollableTabController is tab based ContainerViewController with shrink-able upper content area.
+ScrollableTabController is tab based ContainerViewController with shrinkable upper content area.
 
 
 ## Demo
@@ -17,7 +17,7 @@ iOS10+
 
 ## Usage
 
-### Instantiate by code
+### Instantiation by code
 
 ```swift
 let scrollableTabController = ScrollableTabController()
@@ -35,7 +35,7 @@ There're some restrictions to avoid unwanted behavior.
 
 #### UpperContentViewController
 
-- Its view has to be able to define its height. ScrollableTabController observe the height and decide its container view's height.
+- Its view has to be able to define its height. ScrollableTabController observes the height and decides UpperContentViewController.view's container view's height.
 
 #### ScrollableViewController
 
