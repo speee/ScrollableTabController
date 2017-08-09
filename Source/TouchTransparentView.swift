@@ -8,9 +8,9 @@
 
 import UIKit
 
-class TouchTransparentView: UIView {
+public class TouchTransparentView: UIView {
 
-  override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+  override public func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
     let hitView = super.hitTest(point, with: event)
 
     guard hitView !== self else {

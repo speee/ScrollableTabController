@@ -36,6 +36,7 @@ There're some restrictions to avoid unwanted behavior.
 #### UpperContentViewController
 
 - Its view has to be able to define its height. ScrollableTabController observes the height and decides UpperContentViewController.view's container view's height.
+- If you want to allow users to scroll over upper content area, consider using TouchTransparentView that passes touch events to views below it.
 
 #### ScrollableViewController
 
