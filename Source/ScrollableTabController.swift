@@ -204,6 +204,10 @@ public final class ScrollableTabController: UIViewController {
   private var didLayoutUpperContent = false
 
   // MARK: - Lifecycle
+  public override var preferredStatusBarStyle: UIStatusBarStyle {
+    return upperContentViewController?.preferredStatusBarStyle ?? .default
+  }
+
   override public func viewDidLoad() {
     super.viewDidLoad()
 
