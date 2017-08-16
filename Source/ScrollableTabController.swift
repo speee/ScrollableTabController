@@ -122,6 +122,8 @@ public final class ScrollableTabController: UIViewController {
         else {
           return
       }
+      didLayoutUpperContent = false
+
       addChildViewController(controller)
       controller.automaticallyAdjustsScrollViewInsets = false
       controller.didMove(toParentViewController: self)
@@ -190,6 +192,7 @@ public final class ScrollableTabController: UIViewController {
   }
   private var isUpperViewSizeFixed = false
   private var shouldIgnoreOffsetChange = false
+  private var didLayoutUpperContent = false
 
   // MARK: - Lifecycle
   override public func viewDidLoad() {
@@ -201,6 +204,11 @@ public final class ScrollableTabController: UIViewController {
     setupUpperContentViewController()
     setupChildViewController()
     startUpperContentObservable()
+  }
+
+  public override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    didLayoutUpperContent = true
   }
 
   private func setupUpperContentViewController() {
@@ -337,6 +345,9 @@ public final class ScrollableTabController: UIViewController {
   }
 
   private func observeUpperViewHeight(_ height: CGFloat) {
+    guard didLayoutUpperContent == false else {
+      return
+    }
     guard let scrollable = topScrollableContentViewController else {
       return
     }
@@ -355,12 +366,9 @@ public final class ScrollableTabController: UIViewController {
   }
 
   private func observeScrollViewOffset(_ offsetY: CGFloat) {
-
     let offset = -(tabViewHeight + offsetY)
     let maxValue = CGFloat(0.0)
-    let minValue = upperContentViewHeight
-
-    let constant = min(max(offset, maxValue), minValue)
+    let constant = max(offset, maxValue)
 
     guard constant != tabViewTopConstraint.constant else {
       return
