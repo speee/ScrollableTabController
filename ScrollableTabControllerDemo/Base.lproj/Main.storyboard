@@ -257,8 +257,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBc-eK-3Ka">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="142" id="XgP-xy-lg9"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xma-fV-DOJ">
-                                <rect key="frame" x="165.5" y="90" width="43.5" height="21"/>
+                                <rect key="frame" x="166" y="159" width="43.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="SlB-Ui-8ww"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -267,8 +277,11 @@
                         <color key="backgroundColor" red="1" green="0.2411553136" blue="0.24570151730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Xma-fV-DOJ" firstAttribute="centerX" secondItem="ISP-h2-KeP" secondAttribute="centerX" id="I0o-0v-8ew"/>
-                            <constraint firstItem="Xma-fV-DOJ" firstAttribute="centerY" secondItem="ISP-h2-KeP" secondAttribute="centerY" id="kWL-O9-u26"/>
-                            <constraint firstItem="Xma-fV-DOJ" firstAttribute="top" secondItem="asA-Pe-LIf" secondAttribute="bottom" constant="90" id="tzm-Zt-VQy"/>
+                            <constraint firstAttribute="trailing" secondItem="TBc-eK-3Ka" secondAttribute="trailing" id="biQ-5w-4xg"/>
+                            <constraint firstItem="Xma-fV-DOJ" firstAttribute="top" secondItem="TBc-eK-3Ka" secondAttribute="bottom" constant="17" id="j15-ZI-9Ic"/>
+                            <constraint firstItem="TBc-eK-3Ka" firstAttribute="leading" secondItem="ISP-h2-KeP" secondAttribute="leading" id="lDW-u7-pch"/>
+                            <constraint firstItem="TBc-eK-3Ka" firstAttribute="top" secondItem="asA-Pe-LIf" secondAttribute="bottom" id="sCt-io-ch6"/>
+                            <constraint firstItem="Abw-Ki-QLt" firstAttribute="top" secondItem="Xma-fV-DOJ" secondAttribute="bottom" constant="20" id="w7e-R5-SU4"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -277,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JgZ-IY-9oM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1012" y="-40"/>
+            <point key="canvasLocation" x="1012" y="-40.479760119940032"/>
         </scene>
     </scenes>
 </document>
