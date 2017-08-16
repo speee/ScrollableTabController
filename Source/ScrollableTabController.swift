@@ -385,6 +385,11 @@ public final class ScrollableTabController: UIViewController {
       return
     }
 
+    if let scrollable = viewControllers[selectedIndex] as? Scrollable {
+      let scrollInset = UIEdgeInsets.init(top: constant + tabViewHeight, left: 0.0, bottom: 0.0, right: 0.0)
+      scrollable.scrollView.scrollIndicatorInsets = scrollInset
+    }
+
     tabViewTopConstraint.constant = constant
     view.setNeedsLayout() // layoutIfNeeded() may not redraw the view
   }
