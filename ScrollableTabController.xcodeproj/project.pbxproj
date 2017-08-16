@@ -13,6 +13,8 @@
 		ED7846D91F302BB800511AB2 /* TouchTransparentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7846D81F302BB800511AB2 /* TouchTransparentView.swift */; };
 		ED7846DD1F3163A300511AB2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7846DC1F3163A300511AB2 /* Extensions.swift */; };
 		ED7C21231F3AB00600018F97 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C21221F3AB00600018F97 /* Log.swift */; };
+		EDABFDFE1F44299000E1D56C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABFDFD1F44299000E1D56C /* ProfileViewController.swift */; };
+		EDABFE001F4429C900E1D56C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDABFDFF1F4429C900E1D56C /* Social.framework */; };
 		EDEA2CBD1F2F18BB00B35F4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEA2CBC1F2F18BB00B35F4A /* AppDelegate.swift */; };
 		EDEA2CC21F2F18BB00B35F4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDEA2CC01F2F18BB00B35F4A /* Main.storyboard */; };
 		EDEA2CC41F2F18BB00B35F4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDEA2CC31F2F18BB00B35F4A /* Assets.xcassets */; };
@@ -54,6 +56,9 @@
 		ED7846D81F302BB800511AB2 /* TouchTransparentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchTransparentView.swift; sourceTree = "<group>"; };
 		ED7846DC1F3163A300511AB2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ED7C21221F3AB00600018F97 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		EDABFDFB1F44296F00E1D56C /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		EDABFDFD1F44299000E1D56C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		EDABFDFF1F4429C900E1D56C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		EDEA2CBA1F2F18BB00B35F4A /* ScrollableTabControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollableTabControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDEA2CBC1F2F18BB00B35F4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDEA2CC11F2F18BB00B35F4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDABFE001F4429C900E1D56C /* Social.framework in Frameworks */,
 				EDEA2CCD1F2F309900B35F4A /* ScrollableTabController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +93,7 @@
 				ED747D051F2B35B000E228D2 /* Source */,
 				EDEA2CBB1F2F18BB00B35F4A /* ScrollableTabControllerDemo */,
 				ED747CFB1F2B356800E228D2 /* Products */,
+				EDABFDFA1F44296F00E1D56C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,10 +120,20 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		EDABFDFA1F44296F00E1D56C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDABFDFF1F4429C900E1D56C /* Social.framework */,
+				EDABFDFB1F44296F00E1D56C /* Twitter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EDEA2CBB1F2F18BB00B35F4A /* ScrollableTabControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
 				EDEA2CBC1F2F18BB00B35F4A /* AppDelegate.swift */,
+				EDABFDFD1F44299000E1D56C /* ProfileViewController.swift */,
 				EDEA2CC01F2F18BB00B35F4A /* Main.storyboard */,
 				EDEA2CC31F2F18BB00B35F4A /* Assets.xcassets */,
 				EDEA2CC51F2F18BB00B35F4A /* LaunchScreen.storyboard */,
@@ -271,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDABFDFE1F44299000E1D56C /* ProfileViewController.swift in Sources */,
 				EDEA2CBD1F2F18BB00B35F4A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

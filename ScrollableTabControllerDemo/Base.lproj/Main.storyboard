@@ -292,5 +292,51 @@
             </objects>
             <point key="canvasLocation" x="1012" y="-40.479760119940032"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="ymz-hx-sqa">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="vzo-Da-uFb" customClass="ProfileViewController" customModule="ScrollableTabControllerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lsi-hw-E9S"/>
+                        <viewControllerLayoutGuide type="bottom" id="oIZ-ET-Mfc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6C0-T8-iKZ" customClass="TouchTransparentView" customModule="ScrollableTabController">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QKZ-51-tv9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="chn-qF-jwq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8r-tP-wLg">
+                                <rect key="frame" x="16" y="259" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oIZ-ET-Mfc" firstAttribute="top" secondItem="Z8r-tP-wLg" secondAttribute="bottom" constant="20" id="2QQ-eO-jQB"/>
+                            <constraint firstAttribute="trailing" secondItem="QKZ-51-tv9" secondAttribute="trailing" id="3O6-gp-gdg"/>
+                            <constraint firstItem="Z8r-tP-wLg" firstAttribute="leading" secondItem="6C0-T8-iKZ" secondAttribute="leading" constant="16" id="hbs-t1-UqF"/>
+                            <constraint firstItem="Z8r-tP-wLg" firstAttribute="top" secondItem="QKZ-51-tv9" secondAttribute="bottom" constant="9" id="j2h-j8-ZDC"/>
+                            <constraint firstItem="QKZ-51-tv9" firstAttribute="top" secondItem="6C0-T8-iKZ" secondAttribute="top" id="r9l-6B-qW9"/>
+                            <constraint firstItem="QKZ-51-tv9" firstAttribute="leading" secondItem="6C0-T8-iKZ" secondAttribute="leading" id="x08-g9-iyT"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="300"/>
+                    <connections>
+                        <outlet property="coverImageView" destination="QKZ-51-tv9" id="5ig-1c-2j6"/>
+                        <outlet property="screenNameLabel" destination="Z8r-tP-wLg" id="GJf-QF-RsP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h0U-ZZ-BQp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1762" y="4"/>
+        </scene>
     </scenes>
 </document>
