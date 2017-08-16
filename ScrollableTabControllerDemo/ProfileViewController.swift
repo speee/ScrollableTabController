@@ -13,6 +13,13 @@ import ScrollableTabController
 class ProfileViewController: UIViewController {
   
   @IBOutlet private weak var coverImageView: UIImageView!
+  @IBOutlet private weak var iconImageView: UIImageView! {
+    didSet {
+      iconImageView.layer.borderWidth = 4.0
+      iconImageView.layer.borderColor = UIColor.white.cgColor
+      iconImageView.layer.cornerRadius = iconImageView.bounds.size.width / 2.0
+    }
+  }
   @IBOutlet private weak var screenNameLabel: UILabel!
   
   override func viewDidLoad() {

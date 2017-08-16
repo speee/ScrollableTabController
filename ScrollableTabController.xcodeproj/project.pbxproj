@@ -14,7 +14,6 @@
 		ED7846DD1F3163A300511AB2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7846DC1F3163A300511AB2 /* Extensions.swift */; };
 		ED7C21231F3AB00600018F97 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C21221F3AB00600018F97 /* Log.swift */; };
 		EDABFDFE1F44299000E1D56C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABFDFD1F44299000E1D56C /* ProfileViewController.swift */; };
-		EDABFE001F4429C900E1D56C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDABFDFF1F4429C900E1D56C /* Social.framework */; };
 		EDEA2CBD1F2F18BB00B35F4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEA2CBC1F2F18BB00B35F4A /* AppDelegate.swift */; };
 		EDEA2CC21F2F18BB00B35F4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDEA2CC01F2F18BB00B35F4A /* Main.storyboard */; };
 		EDEA2CC41F2F18BB00B35F4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDEA2CC31F2F18BB00B35F4A /* Assets.xcassets */; };
@@ -79,7 +78,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDABFE001F4429C900E1D56C /* Social.framework in Frameworks */,
 				EDEA2CCD1F2F309900B35F4A /* ScrollableTabController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
