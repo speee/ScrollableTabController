@@ -8,6 +8,15 @@
 
 import UIKit
 
+public protocol ShrinkableContent {
+  var minimumHeight: CGFloat? { get }
+}
+extension ShrinkableContent {
+  var minimumHeight: CGFloat? {
+    return nil
+  }
+}
+
 public protocol Scrollable {
   var scrollView: UIScrollView! { get }
 }
@@ -366,8 +375,9 @@ public final class ScrollableTabController: UIViewController {
   }
 
   private func observeScrollViewOffset(_ offsetY: CGFloat) {
+
     let offset = -(tabViewHeight + offsetY)
-    let maxValue = CGFloat(0.0)
+    let maxValue = (upperContentViewController as? ShrinkableContent)?.minimumHeight ?? CGFloat(0.0)
     let constant = max(offset, maxValue)
 
     guard constant != tabViewTopConstraint.constant else {
