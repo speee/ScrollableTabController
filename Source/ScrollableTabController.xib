@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -70,7 +70,7 @@
                 <constraint firstItem="XgL-wa-MXe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="900" id="VHt-h1-wIf"/>
                 <constraint firstItem="DwG-43-7sk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Vcs-uo-rq5"/>
                 <constraint firstItem="XgL-wa-MXe" firstAttribute="top" secondItem="3UM-PZ-OGQ" secondAttribute="bottom" id="eHm-tr-TPa"/>
-                <constraint firstItem="3UM-PZ-OGQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jt7-PS-LcE"/>
+                <constraint firstItem="3UM-PZ-OGQ" firstAttribute="top" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" id="jt7-PS-LcE"/>
                 <constraint firstItem="DwG-43-7sk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sgR-CD-iOf"/>
                 <constraint firstItem="3UM-PZ-OGQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wtt-bh-HE6"/>
                 <constraint firstItem="XgL-wa-MXe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3UM-PZ-OGQ" secondAttribute="bottom" id="y7x-xN-elp"/>
