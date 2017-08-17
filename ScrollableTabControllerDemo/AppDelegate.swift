@@ -14,25 +14,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-  func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
     window = UIWindow(frame: UIScreen.main.bounds)
     
     let scrollableTabController = ScrollableTabController()
 
     let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-    let demoTableViewController1 = storyboard.instantiateViewController(withIdentifier: "DemoTableViewController") as! UITableViewController
-    let demoTableViewController2 = storyboard.instantiateViewController(withIdentifier: "DemoTableViewController") as! UITableViewController
-
-    demoTableViewController1.title = "TableView 1"
-    demoTableViewController2.title = "TableView 2"
+    let timelineViewController = storyboard.instantiateViewController(withIdentifier: "TimelineViewController") as! TimelineViewController
+    timelineViewController.title = "Timeline"
+    timelineViewController.cellIdentifier = .normal
     
-    demoTableViewController2.tableView.backgroundColor = UIColor.white
+    let imageTimelineViewController = storyboard.instantiateViewController(withIdentifier: "TimelineViewController") as! TimelineViewController
+    imageTimelineViewController.title = "Media"
+    imageTimelineViewController.cellIdentifier = .image
     
     let upperContentViewController = storyboard.instantiateViewController(withIdentifier: "ProfileViewController")
     
-    scrollableTabController.viewControllers = [ demoTableViewController1, demoTableViewController2 ]
+    scrollableTabController.viewControllers = [ timelineViewController, imageTimelineViewController ]
     scrollableTabController.upperContentViewController = upperContentViewController
     
     let navigationController = UINavigationController.init(rootViewController: scrollableTabController)

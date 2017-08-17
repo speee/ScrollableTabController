@@ -20,6 +20,7 @@
 		EDEA2CC71F2F18BB00B35F4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDEA2CC51F2F18BB00B35F4A /* LaunchScreen.storyboard */; };
 		EDEA2CCD1F2F309900B35F4A /* ScrollableTabController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED747CFA1F2B356800E228D2 /* ScrollableTabController.framework */; };
 		EDEA2CCE1F2F309900B35F4A /* ScrollableTabController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED747CFA1F2B356800E228D2 /* ScrollableTabController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EDFE04241F4553BA00EDA902 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFE04231F4553BA00EDA902 /* TimelineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		EDEA2CC31F2F18BB00B35F4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDEA2CC61F2F18BB00B35F4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDEA2CC81F2F18BB00B35F4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDFE04231F4553BA00EDA902 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			children = (
 				EDEA2CBC1F2F18BB00B35F4A /* AppDelegate.swift */,
 				EDABFDFD1F44299000E1D56C /* ProfileViewController.swift */,
+				EDFE04231F4553BA00EDA902 /* TimelineViewController.swift */,
 				EDEA2CC01F2F18BB00B35F4A /* Main.storyboard */,
 				EDEA2CC31F2F18BB00B35F4A /* Assets.xcassets */,
 				EDEA2CC51F2F18BB00B35F4A /* LaunchScreen.storyboard */,
@@ -288,6 +291,7 @@
 			files = (
 				EDABFDFE1F44299000E1D56C /* ProfileViewController.swift in Sources */,
 				EDEA2CBD1F2F18BB00B35F4A /* AppDelegate.swift in Sources */,
+				EDFE04241F4553BA00EDA902 /* TimelineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
