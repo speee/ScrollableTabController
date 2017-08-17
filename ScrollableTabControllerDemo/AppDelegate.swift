@@ -17,10 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
     window = UIWindow(frame: UIScreen.main.bounds)
-    
-    let scrollableTabController = ScrollableTabController()
-
     let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+    
+    // Setup content ViewControllers
     let timelineViewController = storyboard.instantiateViewController(withIdentifier: "TimelineViewController") as! TimelineViewController
     timelineViewController.title = "Timeline"
     timelineViewController.cellIdentifier = .normal
@@ -31,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let upperContentViewController = storyboard.instantiateViewController(withIdentifier: "ProfileViewController")
     
+    // Setup ScrollableTabController
+    let scrollableTabController = ScrollableTabController()
     scrollableTabController.viewControllers = [ timelineViewController, imageTimelineViewController ]
     scrollableTabController.upperContentViewController = upperContentViewController
     
