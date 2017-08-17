@@ -22,6 +22,11 @@ class ProfileViewController: UIViewController {
   }
   @IBOutlet private weak var screenNameLabel: UILabel!
   
+  // MARK: - Lifecycle
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
   }
