@@ -189,9 +189,7 @@ public final class ScrollableTabController: UIViewController {
     }
   }
 
-  private var upperContentViewHeight: CGFloat {
-    return upperContentView.frame.height
-  }
+  private var upperContentViewHeight: CGFloat = 0.0
   private var scrollInsetTop: CGFloat {
     return upperContentViewHeight + tabViewHeight
   }
@@ -369,7 +367,7 @@ public final class ScrollableTabController: UIViewController {
       return
     }
 
-    let scrollInsetTop = height + tabViewHeight
+    upperContentViewHeight = height
     isUpperViewSizeFixed = true
 
     guard scrollInsetTop != scrollable.scrollView.contentInset.top else {
