@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,11 +18,15 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchBackground" translatesAutoresizingMaskIntoConstraints="NO" id="gC2-4T-UCf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="gS0-3Z-tbl">
-                                <rect key="frame" x="53" y="501.5" width="270" height="65.5"/>
+                                <rect key="frame" x="72" y="570" width="270" height="66"/>
                                 <attributedString key="attributedText">
                                     <fragment content="ScrollableTabController">
                                         <attributes>
@@ -53,7 +57,11 @@ Cg
                         <constraints>
                             <constraint firstItem="gS0-3Z-tbl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="3dX-ME-sAi"/>
                             <constraint firstItem="gS0-3Z-tbl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="GwF-O6-VHY"/>
+                            <constraint firstItem="gC2-4T-UCf" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="MJr-ot-AXj"/>
+                            <constraint firstAttribute="trailing" secondItem="gC2-4T-UCf" secondAttribute="trailing" id="OOB-3W-CHN"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="gS0-3Z-tbl" secondAttribute="bottom" constant="100" id="Qil-Hq-4C4"/>
+                            <constraint firstAttribute="bottom" secondItem="gC2-4T-UCf" secondAttribute="bottom" id="Vag-Sr-BeU"/>
+                            <constraint firstItem="gC2-4T-UCf" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="fZ8-Q5-FkM"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -62,4 +70,7 @@ Cg
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchBackground" width="375" height="667"/>
+    </resources>
 </document>

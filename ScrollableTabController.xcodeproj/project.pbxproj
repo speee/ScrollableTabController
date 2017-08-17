@@ -212,6 +212,7 @@
 					};
 					EDEA2CB91F2F18BB00B35F4A = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 3EDT3669ZJ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -473,6 +474,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3EDT3669ZJ;
 				INFOPLIST_FILE = ScrollableTabControllerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -487,6 +489,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3EDT3669ZJ;
 				INFOPLIST_FILE = ScrollableTabControllerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
