@@ -302,72 +302,62 @@
                         <viewControllerLayoutGuide type="bottom" id="oIZ-ET-Mfc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6C0-T8-iKZ" customClass="TouchTransparentView" customModule="ScrollableTabController">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="306"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="266"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlaceholderText" translatesAutoresizingMaskIntoConstraints="NO" id="oK0-vS-19c">
-                                <rect key="frame" x="0.0" y="172" width="375" height="134"/>
+                                <rect key="frame" x="0.0" y="132" width="375" height="134"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oK0-vS-19c" secondAttribute="height" multiplier="375:134" id="Byr-ru-HYc"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CoverImage" translatesAutoresizingMaskIntoConstraints="NO" id="QKZ-51-tv9">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="Nys-lq-XgK"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="800" constant="125" id="chn-qF-jwq"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="910" constant="125" id="chn-qF-jwq"/>
                                 </constraints>
                             </imageView>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yNL-6a-pT5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yNL-6a-pT5" userLabel="Mask View" customClass="TouchTransparentView" customModule="ScrollableTabController">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                                 <subviews>
-                                    <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBp-hx-yGq">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="F3B-Pf-V5F">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                    <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGy-k3-8Sa">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hL9-lg-hul">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="5Ch-ZH-HtS"/>
-                                        </constraints>
                                         <blurEffect style="dark"/>
                                     </visualEffectView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzI-tI-DDu">
-                                        <rect key="frame" x="337" y="27" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzI-tI-DDu">
+                                        <rect key="frame" x="335" y="30" width="24" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="F0r-D0-uxF"/>
+                                            <constraint firstAttribute="width" constant="24" id="F0r-D0-uxF"/>
                                             <constraint firstAttribute="width" secondItem="vzI-tI-DDu" secondAttribute="height" multiplier="1:1" id="THK-A2-Zsn"/>
                                         </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" image="Button"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="vzI-tI-DDu" firstAttribute="centerY" secondItem="aBp-hx-yGq" secondAttribute="centerY" constant="10" id="5IJ-R4-t67"/>
-                                    <constraint firstItem="aBp-hx-yGq" firstAttribute="leading" secondItem="yNL-6a-pT5" secondAttribute="leading" id="Mtr-fk-vHf"/>
-                                    <constraint firstAttribute="trailing" secondItem="vzI-tI-DDu" secondAttribute="trailing" constant="8" id="iQV-ku-zV3"/>
-                                    <constraint firstAttribute="trailing" secondItem="aBp-hx-yGq" secondAttribute="trailing" id="k4E-yS-asj"/>
-                                    <constraint firstItem="aBp-hx-yGq" firstAttribute="top" secondItem="yNL-6a-pT5" secondAttribute="top" id="kI8-EH-Agy"/>
+                                    <constraint firstItem="bGy-k3-8Sa" firstAttribute="top" secondItem="yNL-6a-pT5" secondAttribute="top" id="7KM-cz-Sbq"/>
+                                    <constraint firstAttribute="bottom" secondItem="bGy-k3-8Sa" secondAttribute="bottom" id="FOe-Mg-sM7"/>
+                                    <constraint firstItem="vzI-tI-DDu" firstAttribute="top" secondItem="yNL-6a-pT5" secondAttribute="top" constant="30" id="QNI-fP-wdn"/>
+                                    <constraint firstAttribute="trailing" secondItem="bGy-k3-8Sa" secondAttribute="trailing" id="cZk-C3-3zZ"/>
+                                    <constraint firstItem="bGy-k3-8Sa" firstAttribute="leading" secondItem="yNL-6a-pT5" secondAttribute="leading" id="hCa-lC-u9n"/>
+                                    <constraint firstAttribute="trailing" secondItem="vzI-tI-DDu" secondAttribute="trailing" constant="16" id="iQV-ku-zV3"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Bb7-Qw-p5l">
-                                <rect key="frame" x="8" y="97" width="75" height="75"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="VqX-84-vYW"/>
-                                    <constraint firstAttribute="width" secondItem="Bb7-Qw-p5l" secondAttribute="height" id="gu1-AH-hqM"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="yNL-6a-pT5" firstAttribute="top" secondItem="QKZ-51-tv9" secondAttribute="top" id="1rL-SJ-O34"/>
-                            <constraint firstItem="oK0-vS-19c" firstAttribute="top" secondItem="Bb7-Qw-p5l" secondAttribute="bottom" id="2h9-8N-nME"/>
-                            <constraint firstItem="Bb7-Qw-p5l" firstAttribute="leading" secondItem="6C0-T8-iKZ" secondAttribute="leading" constant="8" id="3Il-Ii-oos"/>
                             <constraint firstAttribute="trailing" secondItem="QKZ-51-tv9" secondAttribute="trailing" id="3O6-gp-gdg"/>
                             <constraint firstItem="yNL-6a-pT5" firstAttribute="trailing" secondItem="QKZ-51-tv9" secondAttribute="trailing" id="5S6-fR-n8G"/>
-                            <constraint firstItem="Bb7-Qw-p5l" firstAttribute="top" secondItem="QKZ-51-tv9" secondAttribute="bottom" constant="-28" id="Hm0-Wp-K6S"/>
                             <constraint firstAttribute="trailing" secondItem="oK0-vS-19c" secondAttribute="trailing" id="KwG-PG-46Y"/>
+                            <constraint firstItem="oK0-vS-19c" firstAttribute="top" secondItem="QKZ-51-tv9" secondAttribute="bottom" priority="920" constant="8" id="L5T-w2-v9N"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QKZ-51-tv9" secondAttribute="bottom" id="cV2-4V-bKf"/>
                             <constraint firstItem="yNL-6a-pT5" firstAttribute="leading" secondItem="QKZ-51-tv9" secondAttribute="leading" id="dcx-9G-6Dt"/>
                             <constraint firstItem="yNL-6a-pT5" firstAttribute="bottom" secondItem="QKZ-51-tv9" secondAttribute="bottom" id="gm4-3J-gzc"/>
                             <constraint firstItem="oIZ-ET-Mfc" firstAttribute="top" secondItem="oK0-vS-19c" secondAttribute="bottom" id="mDd-HU-Zgk"/>
@@ -377,10 +367,10 @@
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="306"/>
+                    <size key="freeformSize" width="375" height="266"/>
                     <connections>
+                        <outlet property="blurEffectView" destination="bGy-k3-8Sa" id="tup-TS-vtv"/>
                         <outlet property="coverImageView" destination="QKZ-51-tv9" id="5ig-1c-2j6"/>
-                        <outlet property="iconImageView" destination="Bb7-Qw-p5l" id="eXK-Q8-oEn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0U-ZZ-BQp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -391,7 +381,6 @@
     <resources>
         <image name="Button" width="33" height="33"/>
         <image name="CoverImage" width="375" height="125"/>
-        <image name="Icon" width="75" height="75"/>
         <image name="PlaceholderText" width="750" height="268"/>
     </resources>
 </document>
