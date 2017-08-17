@@ -165,8 +165,13 @@ public final class ScrollableTabController: UIViewController {
   }
 
   @IBOutlet private weak var tabView: UIView!
-  @IBOutlet private weak var tabViewTopConstraint: NSLayoutConstraint!
   @IBOutlet private weak var tabContentView: UIView!
+  @IBOutlet private weak var tabViewTopConstraint: NSLayoutConstraint! {
+    didSet {
+      let temp = didLayoutUpperContent
+      didLayoutUpperContent = temp
+    }
+  }
 
   private var topScrollableContentViewController: Scrollable? {
     guard let scrollable = selectedViewController as? Scrollable else {
@@ -192,9 +197,21 @@ public final class ScrollableTabController: UIViewController {
   }
   private var isUpperViewSizeFixed = false
   private var shouldIgnoreOffsetChange = false
-  private var didLayoutUpperContent = false
+  private var didLayoutUpperContent = false {
+    didSet {
+      if didLayoutUpperContent {
+        tabViewTopConstraint?.priority = 950
+      } else {
+        tabViewTopConstraint?.priority = 900
+      }
+    }
+  }
 
   // MARK: - Lifecycle
+  public override var preferredStatusBarStyle: UIStatusBarStyle {
+    return upperContentViewController?.preferredStatusBarStyle ?? .default
+  }
+
   override public func viewDidLoad() {
     super.viewDidLoad()
 
@@ -366,6 +383,7 @@ public final class ScrollableTabController: UIViewController {
   }
 
   private func observeScrollViewOffset(_ offsetY: CGFloat) {
+
     let offset = -(tabViewHeight + offsetY)
     let maxValue = CGFloat(0.0)
     let constant = max(offset, maxValue)
