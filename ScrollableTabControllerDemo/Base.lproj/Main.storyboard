@@ -323,7 +323,6 @@
                     <size key="freeformSize" width="375" height="266"/>
                     <connections>
                         <outlet property="blurEffectView" destination="bGy-k3-8Sa" id="tup-TS-vtv"/>
-                        <outlet property="coverImageView" destination="QKZ-51-tv9" id="5ig-1c-2j6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0U-ZZ-BQp" userLabel="First Responder" sceneMemberID="firstResponder"/>

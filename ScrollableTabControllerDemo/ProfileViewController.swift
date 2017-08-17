@@ -12,7 +12,6 @@ import ScrollableTabController
 
 class ProfileViewController: UIViewController {
   
-  @IBOutlet private weak var coverImageView: UIImageView!
   @IBOutlet private weak var blurEffectView: UIVisualEffectView!
   
   // MARK: - Lifecycle
