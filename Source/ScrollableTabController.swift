@@ -237,7 +237,7 @@ public final class ScrollableTabController: UIViewController {
     upperContentView.translatesAutoresizingMaskIntoConstraints = false
     upperContentViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
-    let constraints = [NSLayoutAttribute.top, .right, .left, .bottom].map { (attribute) -> NSLayoutConstraint in
+    let constraints = [NSLayoutAttribute.top, .right, .left, .bottom].map { attribute -> NSLayoutConstraint in
       return NSLayoutConstraint.init(
         item: self.upperContentView,
         attribute: attribute,
@@ -337,7 +337,7 @@ public final class ScrollableTabController: UIViewController {
 
   override public func observeValue(forKeyPath keyPath: String?,
                                     of object: Any?,
-                                    change: [NSKeyValueChangeKey : Any]?,
+                                    change: [NSKeyValueChangeKey: Any]?,
                                     context: UnsafeMutableRawPointer?) {
     switch keyPath {
     case .some("bounds"), .some("frame"):
