@@ -23,9 +23,9 @@ iOS10+
 ```swift
 let scrollableTabController = ScrollableTabController()
 
-scrollableTabController.viewControllers = [ 
-  someScrollableViewController1, 
-  someScrollableViewController2
+scrollableTabController.viewControllers = [
+someScrollableViewController1,
+someScrollableViewController2
 ]
 scrollableTabController.upperContentViewController = someContentViewController
 ```
@@ -36,10 +36,10 @@ There're some restrictions to use it properly.
 
 #### UpperContentViewController
 
-- UpperContentViewController.view has to define its height with **900 to 950 constraints priority**. 
-	- First, ScrollableTabController observes the height and set it as default height(the upper content height when the scrollable area is not scrolled).
-	- Then when the user scrolls, the upper content area shrinks / expands, 
-	- The default view height(the height when the scrollable area is not scrolled) should be fixed when viewDidLoad is called. Changing the height is not supported.
+- UpperContentViewController.view has to define its height with **900 to 950 constraints priority**.
+- First, ScrollableTabController observes the height and set it as default height(the upper content height when the scrollable area is not scrolled).
+- Then when the user scrolls, the upper content area shrinks / expands,
+- The default view height(the height when the scrollable area is not scrolled) should be fixed when viewDidLoad is called. Changing the height is not supported.
 - If you want to allow users to scroll over upper content area, consider using TouchTransparentView that passes touch events to views below it.
 
 #### ScrollableViewController
@@ -50,7 +50,7 @@ There're some restrictions to use it properly.
 <img width=320 src="https://user-images.githubusercontent.com/904354/29102399-c738c9be-7cf3-11e7-9880-98605319dc7e.gif">
 
 - priority 900 - 950
-	- conflicting xx to achieve
+- conflicting xx to achieve
 - example
 
 ## Installation
