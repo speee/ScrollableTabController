@@ -13,6 +13,7 @@ import ScrollableTabController
 class ProfileViewController: UIViewController {
   
   @IBOutlet private weak var blurEffectView: UIVisualEffectView!
+  @IBOutlet private weak var imageHeightConstraint: NSLayoutConstraint!
   
   // MARK: - Lifecycle
   override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -21,6 +22,10 @@ class ProfileViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { 
+      self.imageHeightConstraint.constant *= 1.5
+    }
   }
   
   override func viewWillAppear(_ animated: Bool) {
