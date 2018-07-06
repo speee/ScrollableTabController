@@ -198,9 +198,9 @@ public final class ScrollableTabController: UIViewController {
   private var didLayoutUpperContent = false {
     didSet {
       if didLayoutUpperContent {
-        tabViewTopConstraint?.priority = 950
+        tabViewTopConstraint?.priority = UILayoutPriority(rawValue: 950)
       } else {
-        tabViewTopConstraint?.priority = 900
+        tabViewTopConstraint?.priority = UILayoutPriority(rawValue: 900)
       }
     }
   }
