@@ -144,6 +144,15 @@ public final class ScrollableTabController: UIViewController {
     return isTabViewHidden ? 0.0 : tabView.frame.size.height
   }
 
+  public var tabViewTintColor: UIColor? {
+    get {
+      return segmentedControl.tintColor
+    }
+    set {
+      segmentedControl.tintColor = newValue
+    }
+  }
+
   // MARK: - Private Accessor
   @IBOutlet private weak var upperContentView: UIView!
   @IBOutlet private weak var segmentedControl: UISegmentedControl! {
