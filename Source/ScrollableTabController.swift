@@ -417,7 +417,7 @@ public final class ScrollableTabController: UIViewController {
 }
 
 extension UIViewController {
-  var scrollableTabController: ScrollableTabController? {
+  public var scrollableTabController: ScrollableTabController? {
     return ancestor()
   }
 }
