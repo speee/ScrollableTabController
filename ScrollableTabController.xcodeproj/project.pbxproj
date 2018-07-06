@@ -269,7 +269,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "EXPECTED_LINT_VERSION=\"0.24.0\"\nSWIFTLINT_PKG_URL=\"https://github.com/realm/SwiftLint/releases/download/${EXPECTED_LINT_VERSION}/SwiftLint.pkg\"\n\nif [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  EXIT_CODE=1\nelse\n  EXIT_CODE=0\nfi\n\nif which swiftlint >/dev/null; then\n  LINT_VERSION=$(swiftlint version)\n  if [ $LINT_VERSION = $EXPECTED_LINT_VERSION ]; then\n    if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n      swiftlint autocorrect\n      swiftlint\n    fi\n  else\n    echo \"error: Unexpected Swiftlint version (${LINT_VERSION}) detected(expected ${EXPECTED_LINT_VERSION}, download from ${SWIFTLINT_PKG_URL}).\"\n    exit $EXIT_CODE\n  fi\nelse\n  echo \"error: SwiftLint not installed, download from ${SWIFTLINT_PKG_URL}\"\n  exit $EXIT_CODE\nfi";
+			shellScript = "EXPECTED_LINT_VERSION=\"0.26.0\"\nSWIFTLINT_PKG_URL=\"https://github.com/realm/SwiftLint/releases/download/${EXPECTED_LINT_VERSION}/SwiftLint.pkg\"\n\nif [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  EXIT_CODE=1\nelse\n  EXIT_CODE=0\nfi\n\nif which swiftlint >/dev/null; then\n  LINT_VERSION=$(swiftlint version)\n  if [ $LINT_VERSION = $EXPECTED_LINT_VERSION ]; then\n    if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n      swiftlint autocorrect\n      swiftlint\n    fi\n  else\n    echo \"error: Unexpected Swiftlint version (${LINT_VERSION}) detected(expected ${EXPECTED_LINT_VERSION}, download from ${SWIFTLINT_PKG_URL}).\"\n    exit $EXIT_CODE\n  fi\nelse\n  echo \"error: SwiftLint not installed, download from ${SWIFTLINT_PKG_URL}\"\n  exit $EXIT_CODE\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
