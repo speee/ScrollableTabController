@@ -390,6 +390,17 @@ public final class ScrollableTabController: UIViewController {
   }
 
   private func observeScrollViewOffset(_ offsetY: CGFloat) {
+    guard didLayoutUpperContent == true else {
+      return
+    }
+
+    guard offsetY > -(upperContentViewHeight + tabViewHeight) else {
+      if tabViewTopConstraint.constant != upperContentViewHeight {
+        tabViewTopConstraint.constant = upperContentViewHeight
+        view.setNeedsLayout() // layoutIfNeeded() may not redraw the view
+      }
+      return
+    }
 
     let offset = -(tabViewHeight + offsetY)
     let maxValue = CGFloat(0.0)
