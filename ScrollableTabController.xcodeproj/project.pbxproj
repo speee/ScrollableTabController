@@ -6,7 +6,23 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		ED0B456B20FDEBB100DE1967 /* Swiftlint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = ED0B456C20FDEBB100DE1967 /* Build configuration list for PBXAggregateTarget "Swiftlint" */;
+			buildPhases = (
+				ED0B456F20FDEBB600DE1967 /* Swiftlint */,
+			);
+			dependencies = (
+			);
+			name = Swiftlint;
+			productName = Swiftlint;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
+		164B84D87D4179334C7780B4 /* Pods_ScrollableTabControllerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 421C7ACD1CB13145DDC9311C /* Pods_ScrollableTabControllerDemo.framework */; };
+		A9B34FA67DF242C83F8BE963 /* Pods_ScrollableTabController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F2C46BF5C854C40FFBAA6F /* Pods_ScrollableTabController.framework */; };
 		ED747D091F2B35B000E228D2 /* ScrollableTabController.h in Headers */ = {isa = PBXBuildFile; fileRef = ED747D071F2B35B000E228D2 /* ScrollableTabController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED747D0B1F2B361700E228D2 /* ScrollableTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED747D0A1F2B361700E228D2 /* ScrollableTabController.swift */; };
 		ED7846D71F302A0E00511AB2 /* ScrollableTabController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED7846D61F302A0E00511AB2 /* ScrollableTabController.xib */; };
@@ -48,6 +64,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		15080E8785A58508BD625180 /* Pods-ScrollableTabController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollableTabController.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScrollableTabController/Pods-ScrollableTabController.release.xcconfig"; sourceTree = "<group>"; };
+		421C7ACD1CB13145DDC9311C /* Pods_ScrollableTabControllerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScrollableTabControllerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51BB203299175CD9DA5B80CC /* Pods-ScrollableTabControllerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollableTabControllerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScrollableTabControllerDemo/Pods-ScrollableTabControllerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		54F2C46BF5C854C40FFBAA6F /* Pods_ScrollableTabController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScrollableTabController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C072FA980F14931CEBB7679 /* Pods-ScrollableTabController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollableTabController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScrollableTabController/Pods-ScrollableTabController.debug.xcconfig"; sourceTree = "<group>"; };
+		8829A7A02659876C63090515 /* Pods-ScrollableTabControllerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollableTabControllerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScrollableTabControllerDemo/Pods-ScrollableTabControllerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		ED747CFA1F2B356800E228D2 /* ScrollableTabController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScrollableTabController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED747D061F2B35B000E228D2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED747D071F2B35B000E228D2 /* ScrollableTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollableTabController.h; sourceTree = "<group>"; };
@@ -73,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9B34FA67DF242C83F8BE963 /* Pods_ScrollableTabController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,12 +104,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDEA2CCD1F2F309900B35F4A /* ScrollableTabController.framework in Frameworks */,
+				164B84D87D4179334C7780B4 /* Pods_ScrollableTabControllerDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C737C8F26F56B2FB763152E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C072FA980F14931CEBB7679 /* Pods-ScrollableTabController.debug.xcconfig */,
+				15080E8785A58508BD625180 /* Pods-ScrollableTabController.release.xcconfig */,
+				8829A7A02659876C63090515 /* Pods-ScrollableTabControllerDemo.debug.xcconfig */,
+				51BB203299175CD9DA5B80CC /* Pods-ScrollableTabControllerDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		ED747CF01F2B356700E228D2 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +129,7 @@
 				EDEA2CBB1F2F18BB00B35F4A /* ScrollableTabControllerDemo */,
 				ED747CFB1F2B356800E228D2 /* Products */,
 				EDABFDFA1F44296F00E1D56C /* Frameworks */,
+				8C737C8F26F56B2FB763152E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +161,8 @@
 			children = (
 				EDABFDFF1F4429C900E1D56C /* Social.framework */,
 				EDABFDFB1F44296F00E1D56C /* Twitter.framework */,
+				54F2C46BF5C854C40FFBAA6F /* Pods_ScrollableTabController.framework */,
+				421C7ACD1CB13145DDC9311C /* Pods_ScrollableTabControllerDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -161,11 +199,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED747D021F2B356800E228D2 /* Build configuration list for PBXNativeTarget "ScrollableTabController" */;
 			buildPhases = (
+				80967E728B2C7939E85EB1CE /* [CP] Check Pods Manifest.lock */,
 				ED747CF51F2B356800E228D2 /* Sources */,
 				ED747CF61F2B356800E228D2 /* Frameworks */,
 				ED747CF71F2B356800E228D2 /* Headers */,
 				ED747CF81F2B356800E228D2 /* Resources */,
-				ED747D0C1F2B36D500E228D2 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -180,6 +218,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDEA2CCB1F2F18BB00B35F4A /* Build configuration list for PBXNativeTarget "ScrollableTabControllerDemo" */;
 			buildPhases = (
+				566B2A3C49B044D73A817A4D /* [CP] Check Pods Manifest.lock */,
 				EDEA2CB61F2F18BB00B35F4A /* Sources */,
 				EDEA2CB71F2F18BB00B35F4A /* Frameworks */,
 				EDEA2CB81F2F18BB00B35F4A /* Resources */,
@@ -205,6 +244,10 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Mitsuyoshi Yamazaki and Speee, Inc.";
 				TargetAttributes = {
+					ED0B456B20FDEBB100DE1967 = {
+						CreatedOnToolsVersion = 9.4.1;
+						ProvisioningStyle = Automatic;
+					};
 					ED747CF91F2B356800E228D2 = {
 						CreatedOnToolsVersion = 8.3.3;
 						LastSwiftMigration = 0940;
@@ -232,6 +275,7 @@
 			targets = (
 				ED747CF91F2B356800E228D2 /* ScrollableTabController */,
 				EDEA2CB91F2F18BB00B35F4A /* ScrollableTabControllerDemo */,
+				ED0B456B20FDEBB100DE1967 /* Swiftlint */,
 			);
 		};
 /* End PBXProject section */
@@ -258,7 +302,43 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		ED747D0C1F2B36D500E228D2 /* Swiftlint */ = {
+		566B2A3C49B044D73A817A4D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScrollableTabControllerDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80967E728B2C7939E85EB1CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScrollableTabController-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED0B456F20FDEBB600DE1967 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -270,7 +350,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "EXPECTED_LINT_VERSION=\"0.26.0\"\nSWIFTLINT_PKG_URL=\"https://github.com/realm/SwiftLint/releases/download/${EXPECTED_LINT_VERSION}/SwiftLint.pkg\"\n\nif [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  EXIT_CODE=1\nelse\n  EXIT_CODE=0\nfi\n\nif which swiftlint >/dev/null; then\n  LINT_VERSION=$(swiftlint version)\n  if [ $LINT_VERSION = $EXPECTED_LINT_VERSION ]; then\n    if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n      swiftlint autocorrect\n      swiftlint\n    fi\n  else\n    echo \"error: Unexpected Swiftlint version (${LINT_VERSION}) detected(expected ${EXPECTED_LINT_VERSION}, download from ${SWIFTLINT_PKG_URL}).\"\n    exit $EXIT_CODE\n  fi\nelse\n  echo \"error: SwiftLint not installed, download from ${SWIFTLINT_PKG_URL}\"\n  exit $EXIT_CODE\nfi";
+			shellScript = "${SRCROOT}/Pods/SwiftLint/swiftlint autocorrect\n${SRCROOT}/Pods/SwiftLint/swiftlint";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -326,6 +406,22 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		ED0B456D20FDEBB100DE1967 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ED0B456E20FDEBB100DE1967 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		ED747D001F2B356800E228D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -429,6 +525,7 @@
 		};
 		ED747D031F2B356800E228D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C072FA980F14931CEBB7679 /* Pods-ScrollableTabController.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -452,6 +549,7 @@
 		};
 		ED747D041F2B356800E228D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15080E8785A58508BD625180 /* Pods-ScrollableTabController.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -473,6 +571,7 @@
 		};
 		EDEA2CC91F2F18BB00B35F4A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8829A7A02659876C63090515 /* Pods-ScrollableTabControllerDemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -489,6 +588,7 @@
 		};
 		EDEA2CCA1F2F18BB00B35F4A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51BB203299175CD9DA5B80CC /* Pods-ScrollableTabControllerDemo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -506,6 +606,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		ED0B456C20FDEBB100DE1967 /* Build configuration list for PBXAggregateTarget "Swiftlint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED0B456D20FDEBB100DE1967 /* Debug */,
+				ED0B456E20FDEBB100DE1967 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ED747CF41F2B356700E228D2 /* Build configuration list for PBXProject "ScrollableTabController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
