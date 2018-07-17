@@ -3,16 +3,33 @@ included:
 excluded:
   - ScrollableTabControllerDemo
 opt_in_rules:
-  - empty_count
-  - force_unwrapping
+  - attributes
+  - closure_end_indentation
   - conditional_returns_on_newline
+  - contains_over_first_not_nil
+  - empty_count
+  - explicit_top_level_acl
+  - fatal_error_message
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - let_var_whitespace
+  - literal_expression_end_indentation
+  - multiline_arguments
+  - multiline_parameters
+  - nimble_operator
   - no_extension_access_modifier
   - operator_usage_whitespace
+  - override_in_extension
   - overridden_super_call
   - private_outlet
   - prohibited_super_call
+  - single_test_class
   - sorted_imports
   - switch_case_on_newline
   - trailing_closure
   - unneeded_parentheses_in_closure_argument
   - vertical_parameter_alignment_on_call
+
+force_unwrapping: error
+line_length: 150
+trailing_newline: error
