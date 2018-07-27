@@ -166,7 +166,8 @@ public final class ScrollableTabController: UIViewController {
       segmentedControl.addTarget(self, action: action, for: .valueChanged)
     }
   }
-  @IBAction func segmentedControlDidChangeValue(sender: AnyObject!) {
+
+  @IBAction func segmentedControlDidChangeValue(sender: UISegmentedControl) {
     selectedIndex = segmentedControl.selectedSegmentIndex
   }
 
