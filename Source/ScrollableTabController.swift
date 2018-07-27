@@ -13,6 +13,7 @@ public protocol Scrollable {
 }
 
 public final class ScrollableTabController: UIViewController {
+  public typealias ScrollableViewController = UIViewController & Scrollable
 
   // MARK: - Public API
   public init() {
@@ -37,7 +38,7 @@ public final class ScrollableTabController: UIViewController {
     }
   }
 
-  public var viewControllers: [UIViewController] = [] {
+  public var viewControllers: [ScrollableViewController] = [] {
     willSet {
       for controller in viewControllers {
         if controller.isViewLoaded {
@@ -65,7 +66,7 @@ public final class ScrollableTabController: UIViewController {
     }
   }
 
-  public var selectedViewController: UIViewController? {
+  public var selectedViewController: ScrollableViewController? {
     guard viewControllers.isNotEmpty else {
       return nil
     }
@@ -136,10 +137,6 @@ public final class ScrollableTabController: UIViewController {
     }
   }
 
-  public func set<T: UIViewController> (scrollableControllers: [T]) where T: Scrollable {
-    viewControllers = scrollableControllers
-  }
-
   public var tabViewHeight: CGFloat {
     return isTabViewHidden ? 0.0 : tabView.frame.size.height
   }
@@ -180,13 +177,6 @@ public final class ScrollableTabController: UIViewController {
       let temp = didLayoutUpperContent
       didLayoutUpperContent = temp
     }
-  }
-
-  private var topScrollableContentViewController: Scrollable? {
-    guard let scrollable = selectedViewController as? Scrollable else {
-      return nil
-    }
-    return scrollable
   }
 
   private var isTabViewHidden: Bool {
@@ -262,10 +252,8 @@ public final class ScrollableTabController: UIViewController {
   }
 
   private func setupChildViewController() {
-    guard isViewLoaded,
-      selectedIndex < viewControllers.count
-      else {
-        return
+    guard let selectedViewController = self.selectedViewController, isViewLoaded else {
+      return
     }
 
     let currentViewController = viewControllers[selectedIndex]
@@ -273,29 +261,27 @@ public final class ScrollableTabController: UIViewController {
     currentViewController.view.frame = tabContentView.bounds
     currentViewController.view.setNeedsLayout()
 
-    if let scrollable = currentViewController as? Scrollable {
-      let scrollInsetTop = isUpperViewSizeFixed ? self.scrollInsetTop : 0.0
-      let scrollInset = UIEdgeInsets.init(top: scrollInsetTop, left: 0.0, bottom: 0.0, right: 0.0)
-      scrollable.scrollView.contentInset = scrollInset
-      scrollable.scrollView.scrollIndicatorInsets = scrollInset
+    let scrollInsetTop = isUpperViewSizeFixed ? self.scrollInsetTop : 0.0
+    let scrollInset = UIEdgeInsets.init(top: scrollInsetTop, left: 0.0, bottom: 0.0, right: 0.0)
+    selectedViewController.scrollView.contentInset = scrollInset
+    selectedViewController.scrollView.scrollIndicatorInsets = scrollInset
 
-      let tabViewTop = tabViewTopConstraint.constant
+    let tabViewTop = tabViewTopConstraint.constant
 
-      if tabViewTop == 0.0 {
-        if scrollable.scrollView.contentOffset.y < 0.0 {
-          let offset = -tabViewHeight
+    if tabViewTop == 0.0 {
+      if selectedViewController.scrollView.contentOffset.y < 0.0 {
+        let offset = -tabViewHeight
 
-          scrollable.scrollView.contentOffset = CGPoint.init(x: 0.0, y: offset)
-          observeScrollViewOffset(offset)
-          shouldIgnoreOffsetChange = true
-        }
-      } else {
-        let offset = -(tabViewHeight + tabViewTop)
-
-        scrollable.scrollView.contentOffset = CGPoint.init(x: 0.0, y: offset)
+        selectedViewController.scrollView.contentOffset = CGPoint.init(x: 0.0, y: offset)
         observeScrollViewOffset(offset)
         shouldIgnoreOffsetChange = true
       }
+    } else {
+      let offset = -(tabViewHeight + tabViewTop)
+
+      selectedViewController.scrollView.contentOffset = CGPoint.init(x: 0.0, y: offset)
+      observeScrollViewOffset(offset)
+      shouldIgnoreOffsetChange = true
     }
 
     tabContentView.addSubview(currentViewController.view)
@@ -322,7 +308,7 @@ public final class ScrollableTabController: UIViewController {
   }
 
   private func startContentObservable() {
-    guard let selectedViewController = selectedViewController as? Scrollable, isViewLoaded else {
+    guard let selectedViewController = self.selectedViewController, isViewLoaded else {
       return
     }
     selectedViewController.scrollView.addObserver(self, forKeyPath: "contentOffset", options: .new, context: nil)
@@ -338,7 +324,7 @@ public final class ScrollableTabController: UIViewController {
   }
 
   private func stopContentObservable() {
-    guard let selectedViewController = selectedViewController as? Scrollable, isViewLoaded else {
+    guard let selectedViewController = self.selectedViewController, isViewLoaded else {
       return
     }
     selectedViewController.scrollView.removeObserver(self, forKeyPath: "contentOffset")
@@ -372,7 +358,7 @@ public final class ScrollableTabController: UIViewController {
     guard didLayoutUpperContent == false else {
       return
     }
-    guard let scrollable = topScrollableContentViewController else {
+    guard let scrollable = selectedViewController else {
       return
     }
 
@@ -410,21 +396,20 @@ public final class ScrollableTabController: UIViewController {
       return
     }
 
+    guard let selectedViewController = self.selectedViewController, isViewLoaded else {
+      return
+    }
+
     guard shouldIgnoreOffsetChange == false else {
-      let currentViewController = viewControllers[selectedIndex]
-      if let scrollable = currentViewController as? Scrollable {
-        let offset = -(self.tabViewTopConstraint.constant + self.tabViewHeight)
-        DispatchQueue.main.async {
-          scrollable.scrollView.contentOffset = CGPoint.init(x: 0.0, y: offset)
-        }
+      let offset = -(self.tabViewTopConstraint.constant + self.tabViewHeight)
+      DispatchQueue.main.async {
+        selectedViewController.scrollView.contentOffset = CGPoint.init(x: 0.0, y: offset)
       }
       return
     }
 
-    if let scrollable = viewControllers[selectedIndex] as? Scrollable {
-      let scrollInset = UIEdgeInsets.init(top: constant + tabViewHeight, left: 0.0, bottom: 0.0, right: 0.0)
-      scrollable.scrollView.scrollIndicatorInsets = scrollInset
-    }
+    let scrollInset = UIEdgeInsets.init(top: constant + tabViewHeight, left: 0.0, bottom: 0.0, right: 0.0)
+    selectedViewController.scrollView.scrollIndicatorInsets = scrollInset
 
     tabViewTopConstraint.constant = constant
     view.setNeedsLayout() // layoutIfNeeded() may not redraw the view
