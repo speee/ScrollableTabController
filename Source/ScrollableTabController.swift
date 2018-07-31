@@ -359,21 +359,21 @@ public final class ScrollableTabController: UIViewController {
     guard didLayoutUpperContent == false else {
       return
     }
-    guard let scrollable = selectedViewController else {
+    guard let selectedViewController = selectedViewController else {
       return
     }
 
     upperContentViewHeight = height
     isUpperViewSizeFixed = true
 
-    guard scrollInsetTop != scrollable.scrollView.contentInset.top else {
+    guard scrollInsetTop != selectedViewController.scrollView.contentInset.top else {
       return
     }
 
     let scrollInset = UIEdgeInsets.init(top: scrollInsetTop, left: 0.0, bottom: 0.0, right: 0.0)
-    scrollable.scrollView.contentInset = scrollInset
-    scrollable.scrollView.scrollIndicatorInsets = scrollInset
-    scrollable.scrollView.contentOffset = CGPoint.init(x: 0.0, y: -scrollInsetTop)
+    selectedViewController.scrollView.contentInset = scrollInset
+    selectedViewController.scrollView.scrollIndicatorInsets = scrollInset
+    selectedViewController.scrollView.contentOffset = CGPoint.init(x: 0.0, y: -scrollInsetTop)
   }
 
   private func observeScrollViewOffset(_ offsetY: CGFloat) {
