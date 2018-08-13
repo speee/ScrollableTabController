@@ -10,8 +10,10 @@ import UIKit
 import Social
 import ScrollableTabController
 
-class ProfileViewController: UIViewController {
-  
+class ProfileViewController: UIViewController, UpperContent {
+
+  let maximumHeight: CGFloat = 266.0
+
   @IBOutlet private weak var blurEffectView: UIVisualEffectView!
   
   // MARK: - Lifecycle

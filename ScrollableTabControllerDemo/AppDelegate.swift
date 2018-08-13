@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     imageTimelineViewController.title = "Media"
     imageTimelineViewController.cellIdentifier = .image
     
-    let upperContentViewController = storyboard.instantiateViewController(withIdentifier: "ProfileViewController")
+    let upperContentViewController = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
     
     // Setup ScrollableTabController
     let scrollableTabController = ScrollableTabController()

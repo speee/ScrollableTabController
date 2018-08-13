@@ -8,11 +8,16 @@
 
 import UIKit
 
+public protocol UpperContent {
+  var maximumHeight: CGFloat { get }
+}
+
 public protocol Scrollable {
   var scrollView: UIScrollView! { get }
 }
 
 public final class ScrollableTabController: UIViewController {
+  public typealias UpperContentViewController = UIViewController & UpperContent
   public typealias ScrollableViewController = UIViewController & Scrollable
 
   // MARK: - Public API
@@ -102,12 +107,12 @@ public final class ScrollableTabController: UIViewController {
     }
   }
 
-  public var upperContentViewController: UIViewController? {
+  public var upperContentViewController: UpperContentViewController? {
     willSet {
-      stopUpperContentObservable()
-      guard newValue != upperContentViewController else {
+      guard newValue !== upperContentViewController else {
         return
       }
+
       upperContentViewController?.willMove(toParentViewController: nil)
       upperContentViewController?.view.removeObserver(self, forKeyPath: "frame")
 
@@ -118,12 +123,11 @@ public final class ScrollableTabController: UIViewController {
       upperContentViewController?.removeFromParentViewController()
     }
     didSet {
-      guard upperContentViewController != oldValue,
+      guard upperContentViewController !== oldValue,
         let controller = upperContentViewController
         else {
           return
       }
-      didLayoutUpperContent = false
 
       addChildViewController(controller)
       controller.automaticallyAdjustsScrollViewInsets = false
@@ -173,12 +177,7 @@ public final class ScrollableTabController: UIViewController {
 
   @IBOutlet private weak var tabView: UIView!
   @IBOutlet private weak var tabContentView: UIView!
-  @IBOutlet private weak var tabViewTopConstraint: NSLayoutConstraint! {
-    didSet {
-      let temp = didLayoutUpperContent
-      didLayoutUpperContent = temp
-    }
-  }
+  @IBOutlet private weak var tabViewTopConstraint: NSLayoutConstraint!
 
   private var isTabViewHidden: Bool {
     set {
@@ -195,15 +194,6 @@ public final class ScrollableTabController: UIViewController {
   }
   private var isUpperViewSizeFixed = false
   private var shouldIgnoreOffsetChange = false
-  private var didLayoutUpperContent = false {
-    didSet {
-      if didLayoutUpperContent {
-        tabViewTopConstraint?.priority = UILayoutPriority(rawValue: 950)
-      } else {
-        tabViewTopConstraint?.priority = UILayoutPriority(rawValue: 900)
-      }
-    }
-  }
 
   // MARK: - Lifecycle
   public override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -219,11 +209,6 @@ public final class ScrollableTabController: UIViewController {
     setupUpperContentViewController()
     setupChildViewController()
     startUpperContentObservable()
-  }
-
-  public override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
-    didLayoutUpperContent = true
   }
 
   private func setupUpperContentViewController() {
@@ -262,7 +247,8 @@ public final class ScrollableTabController: UIViewController {
     currentViewController.view.frame = tabContentView.bounds
     currentViewController.view.setNeedsLayout()
 
-    let scrollInsetTop = isUpperViewSizeFixed ? self.scrollInsetTop : 0.0
+    let upperContentHeight = upperContentViewController?.maximumHeight ?? 0.0
+    let scrollInsetTop = tabViewHeight + upperContentHeight //isUpperViewSizeFixed ? self.scrollInsetTop : 0.0
     let scrollInset = UIEdgeInsets.init(top: scrollInsetTop, left: 0.0, bottom: 0.0, right: 0.0)
     selectedViewController.scrollView.contentInset = scrollInset
     selectedViewController.scrollView.scrollIndicatorInsets = scrollInset
@@ -298,14 +284,10 @@ public final class ScrollableTabController: UIViewController {
     guard isViewLoaded else {
       return
     }
-    observeUpperViewHeight(upperContentView.frame.height)
 
     guard upperContentViewController != nil else {
       return
     }
-    upperContentView.addObserver(self, forKeyPath: "bounds", options: .new, context: nil)
-    upperContentView.layer.addObserver(self, forKeyPath: "frame", options: .new, context: nil)
-    upperContentView.layer.addObserver(self, forKeyPath: "bounds", options: .new, context: nil)
   }
 
   private func startContentObservable() {
@@ -313,15 +295,6 @@ public final class ScrollableTabController: UIViewController {
       return
     }
     selectedViewController.scrollView.addObserver(self, forKeyPath: "contentOffset", options: .new, context: nil)
-  }
-
-  private func stopUpperContentObservable() {
-    guard upperContentViewController != nil, isViewLoaded else {
-      return
-    }
-    upperContentView.removeObserver(self, forKeyPath: "bounds")
-    upperContentView.layer.removeObserver(self, forKeyPath: "frame")
-    upperContentView.layer.removeObserver(self, forKeyPath: "bounds")
   }
 
   private func stopContentObservable() {
@@ -336,13 +309,6 @@ public final class ScrollableTabController: UIViewController {
                                     change: [NSKeyValueChangeKey: Any]?,
                                     context: UnsafeMutableRawPointer?) {
     switch keyPath {
-    case .some("bounds"), .some("frame"):
-      guard let frame = change?[.newKey] as? CGRect else {
-        Log.error("Unexpected change[.newKey], expected: CGRect, actual: \(String(describing: change?[.newKey]))")
-        return
-      }
-      observeUpperViewHeight(frame.height)
-
     case .some("contentOffset"):
       guard let offset = change?[.newKey] as? CGPoint else {
         Log.error("Unexpected change[.newKey], expected: CGPoint, actual: \(String(describing: change?[.newKey]))")
@@ -355,40 +321,7 @@ public final class ScrollableTabController: UIViewController {
     }
   }
 
-  private func observeUpperViewHeight(_ height: CGFloat) {
-    guard didLayoutUpperContent == false else {
-      return
-    }
-    guard let selectedViewController = selectedViewController else {
-      return
-    }
-
-    upperContentViewHeight = height
-    isUpperViewSizeFixed = true
-
-    guard scrollInsetTop != selectedViewController.scrollView.contentInset.top else {
-      return
-    }
-
-    let scrollInset = UIEdgeInsets.init(top: scrollInsetTop, left: 0.0, bottom: 0.0, right: 0.0)
-    selectedViewController.scrollView.contentInset = scrollInset
-    selectedViewController.scrollView.scrollIndicatorInsets = scrollInset
-    selectedViewController.scrollView.contentOffset = CGPoint.init(x: 0.0, y: -scrollInsetTop)
-  }
-
   private func observeScrollViewOffset(_ offsetY: CGFloat) {
-    guard didLayoutUpperContent == true else {
-      return
-    }
-
-    guard offsetY > -(upperContentViewHeight + tabViewHeight) else {
-      if tabViewTopConstraint.constant != upperContentViewHeight {
-        tabViewTopConstraint.constant = upperContentViewHeight
-        view.setNeedsLayout() // layoutIfNeeded() may not redraw the view
-      }
-      return
-    }
-
     let offset = -(tabViewHeight + offsetY)
     let maxValue = CGFloat(0.0)
     let constant = max(offset, maxValue)
@@ -417,7 +350,6 @@ public final class ScrollableTabController: UIViewController {
   }
 
   deinit {
-    stopUpperContentObservable()
     stopContentObservable()
   }
 }
